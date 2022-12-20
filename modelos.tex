@@ -112,7 +112,7 @@ Mas nem tudo está perdido. A queda da bola de boliche no ar sugere que podemos 
 \[
 m a = m g - F_a
 \]
-Nesta equação, $m$ é a massa da bola, $a$ é a sua aceleração, $g$ a aceleração da gravidade e $F_a$ é a força de atrito. Se $F_a = m g$, a aceleração é zero e portanto a velocidade é constante. Esta velocidade é conhecida como velocidade terminal. No entanto, se $F_a$ for pequeno, $F_a \ll mg$, o problema é muito semelhante ao problema no vácuo.
+Nesta equação, $m$ é a massa da bola, $a$ é a sua aceleração, $g$ a aceleração da gravidade e $F_a$ é a força de atrito. Se $F_a = m g$, a aceleração é zero e portanto a velocidade é constante. Esta velocidade é conhecida como velocidade terminal. No entanto, se $F_a$ for pequeno, $F_a \ll mg$, o problema é muito semelhante ao problema no vácuo. 
 
 É lógico que o problema não está resolvido: quanto vale $F_a$? Isso poderia ser obtido realizando experimentos ou calculando a partir das equações da mecânica. Um modelo comum, que será explorado a fundo mais para frente é:
 \[
@@ -123,7 +123,19 @@ onde $C_D$ é um coeficiente, $A$ é a área da seção transversal da esfera ($
 U = \sqrt{\frac{2 m g}{C_D A \rho}}
 \]
 
-O segredo é não olhar com atenção demais estas equações. $C_D$ varia com a velocidade (mais precisamente com um número adimensional chamado de número de Reyniolds), as forças não estão alinhadas na vertical e por aí vai. Mas com cuidado e discernimento, pode-se chegar longe com estes modelos simples. Mas a realidade é muito mais complexa. Quem não se lembra das reclamações sobre a bola Jabulani na copa de 2010. Quem diria que uma bola de futebol poderia causar tantos problemas no século XXI. Nem vou mencionar o quão difícil é jogar bola com uma bexiga...
+O segredo é não olhar com atenção demais estas equações. $C_D$ varia com a velocidade (mais precisamente com um número adimensional chamado de número de Reyniolds), as forças podem não estar alinhadas na vertical, nenhuma bola é uma esfera perfeita  e por aí vai. Mas com cuidado e discernimento, pode-se chegar longe com estes modelos simples. Mas a realidade é muito mais complexa. Quem não se lembra das reclamações sobre a bola Jabulani na copa de 2010. Quem diria que uma bola de futebol poderia causar tantos problemas no século XXI. Nem vou mencionar o quão difícil é jogar bola com uma bexiga...
+
+Este modelo ainda tem um problema sério: uma bexiga com hélio ou uma bola de ping-pong dentro d'água. Então podemos introduzir um novo termo: princípio de Arquimedes. No entanto, agora uma nova dificuldade aparece: qual a direção da força de arrasto? Considerando a direção z como vertical,
+
+\[
+m \frac{d^2 z}{dt^2} = -mg - C_D A \frac{1}{2} \rho |U|\cdot U + \rho g V
+\]
+Agora temos um modelo que funciona, mais ou menos bem. Leva em consideração a força de arrasto, a flutuação e o campo gravitacional. Existe uma caixa preta que é o coeficiente de arrasto $C_D$. Todas as limitações discutidas acima permanecem mas este modelo pode fornecer várias informações interessantes. Um modelo mais sofisticado poderia ser utilizado para o coeficiente de arrasto. Para se resolver esta equação diferencial, precisamos das condições iniciais: No instante, $t=0$, $U=U_0$ (no nosso exemplo $U_0 = 0$) e $z=0$.
+
+Este modelo tem uma escala importante: o peso do corpo $mg$. Outra escala importante é a massa específica do fluido $\rho$. Olhando a equação poderia se dizer que a velocidade é uma outra escala mas no nosso exemplo, a velocidade inicial é nula e portanto a velocidade instantânea é o que se deseja calcular! Por outro lado, caso a velocidade inicial seja diferente zero, isso introduz uma escala de velocidade $U_0$.  Ainda existem as escalas ligadas à geometria do corpo: a área $A$ e o volume $V$. No caso de uma esfera, temos $A = \pi D^2/4$ e $V = \pi/6 D^3$ onde $D$ é o diâmetro da esfera e pode ser considerada a escala de dimensão. Finalemente não podemos esquecer do coeficiente de arrasto $C_D$ e a aceleração da gravidade.
+
+
+
 
 
 \subsection{Escalas}

@@ -97,74 +97,85 @@ Não, não estamos torturando nossos jovens nem fazendo pegadinhas, estamos intr
 
 Será que não seria melhor sermos mais preciso em nossa análise? O vídeo do Brian Cox também ajuda elucidar esta questão. Antes de soltar a bola de boliche e a pena no vácuo, ele solta na presença do ar. Por um lado, a dinâmica da pena é extremamente complexa. Mas não existe diferença perceptível na dinâmica da bola de boliche. Fazendo uma análise frame a frame da imagem chega-se a uma aceleração de aproximandamente 9.8 $m/s^2$. Para se notar qualquer diferença entre a bola de boliche caindo no vácuo e no ar seriam necessárias medições cuidadosas, algo muito mais complexo e caro.
 
-Se no caso da bola de boliche, as diferenças são pequenas, a trajetória da pena é extremamente complexa. Observando de perto o momento em que ela é solta, observa-se que há grandes deformações das penas logo no começo (1 min e 39 s no vídeo do Brian Cox acima). Talvez se as penas fossem rígidas a coisa seria mais simples. Solta um pedaço pequeno de papel ou cartolina onde as deformações são pequenas e a trajetória continua sendo complexa. Talvez seja uma questão de simetria, o que certamente é um ponto interessante. Soltando uma placa fina, incialmente ela terá um comportamento próximo do que se observa com a bola de boliche mas não é necessário esperar muito tempo até que a complexidade apareça. Para eliminar estas dificuldades poderíamos soltar uma esfera bem leve e lisa, talvez uma bexiga, ou bola de criança ou até mesmo ma bola de ping-pong. Mesmo assim, a trajetória pode ser complexa.
+Se no caso da bola de boliche, as diferenças são pequenas, a trajetória da pena é extremamente complexa. Observando de perto o momento em que ela é solta, observa-se que há grandes deformações das penas logo no começo (1 min e 39 s no vídeo do Brian Cox acima). Talvez se as penas fossem rígidas a coisa seria mais simples. Solta um pedaço pequeno de papel ou cartolina onde as deformações são pequenas e a trajetória continua sendo complexa. Talvez seja uma questão de simetria, o que certamente é um ponto interessante. Soltando uma placa fina, incialmente ela terá um comportamento próximo do que se observa com a bola de boliche mas não é necessário esperar muito tempo até que a complexidade apareça. Para eliminar estas dificuldades poderíamos soltar uma esfera bem leve e lisa, talvez uma bexiga, ou bola de criança ou até mesmo ma bola de ping-pong. Mesmo assim, a trajetória pode ser complexa se esperarmos um pouquinho.
 
 
-Tentar analisar a trajetória exata da pena é provavelmente impossível: o problema é certamente caótico e ao se repetir o experimento, o jeitão da trajetória será o mesmo mas cada repetição terá uma trajetória única. Até mesmo caracterizar a geometria e propriedades mecânicas da pena é uma tarefa ingrata. Simplificar o problema, o que aqui chamamos de modelar é a única saída.
+Tentar analisar a trajetória exata da pena é provavelmente impossível: o problema é certamente caótico e ao se repetir o experimento, o jeitão da trajetória será o mesmo mas cada repetição terá uma trajetória única. Até mesmo caracterizar a geometria e propriedades mecânicas da pena é uma tarefa ingrata. Simplificar o problema, o que aqui chamamos de modelagem é a única saída.
 
-Agora é possível entender a genialidade de Galileu. Atacar o problema diretamente mexe com tudo quanto é problema difícil em dinâmica, mecânica dos fluidos, elasticidade, biologoia, etc. Este problema ``simples'', é muito mais complexo do que parece.
-
-Se para Galileu e Newton (e mais tarde Einstein, Heisenberg, Schrödinguer, etc) o problema era determinar os fundamentos da física, hoje em dia mesmo conhecendo detalhadamente todos (será?) os fenômenos que ocorrem na queda da pena ainda estamos longe de prever de maneira precisa a sua trajetória. As coisas podem ser difíceis por motivos diferentes. Para Galileu, Newton, Einstein, etc a dificuldade era a física ainda não conhecida. Mas pode ser a enorme complexidade de qualquer problema real.
+Agora é possível entender a genialidade de Galileu. Atacar o problema diretamente mexe com todas as suas nuances  é um problema quase impossível mesmo nos dias de hoje onde todos (ou quase) os fenômenos envolvidos são conhecidos. O problema da queda da pena envolve tudo o que há de mais difícil  em dinâmica, mecânica dos fluidos, elasticidade, biologoia, etc. Este problema ``simples'', é muito mais complexo do que parece. Se para Galileu e Newton (e mais tarde Einstein, Heisenberg, Schrödinguer, etc) o problema era determinar os fundamentos da física, hoje em dia, mesmo conhecendo detalhadamente todos (será?) os fenômenos que ocorrem na queda da pena ainda estamos longe de prever de maneira precisa a sua trajetória. As coisas podem ser difíceis por motivos diferentes. Para Galileu, Newton, Einstein, etc a dificuldade era a física ainda não conhecida. Para nós é a enorme complexidade e a grande quantidade de detalhes presentes em qualquer problema real.
 
 \subsection{Modelos}
 
-Mas nem tudo está perdido. A queda da bola de boliche no ar sugere que podemos simplificar um pouco o problema:
+Mas nem tudo está perdido. A queda da bola de boliche no ar sugere que podemos simplificar um pouco o problema e aplicar a segunda lei de Newton:
 \[
 m a = m g - F_a
 \]
 Nesta equação, $m$ é a massa da bola, $a$ é a sua aceleração, $g$ a aceleração da gravidade e $F_a$ é a força de atrito. Se $F_a = m g$, a aceleração é zero e portanto a velocidade é constante. Esta velocidade é conhecida como velocidade terminal. No entanto, se $F_a$ for pequeno, $F_a \ll mg$, o problema é muito semelhante ao problema no vácuo. 
 
-É lógico que o problema não está resolvido: quanto vale $F_a$? Isso poderia ser obtido realizando experimentos ou calculando a partir das equações da mecânica. Um modelo comum, que será explorado a fundo mais para frente é:
+É lógico que o problema não está resolvido: quanto vale $F_a$? Isso poderia ser obtido realizando experimentos ou calculando a partir das equações da mecânica. Um modelo comum, que será explorado a fundo adiante é:
 \[
 F_a = C_D A \frac{1}{2}\rho U^2
 \]
-onde $C_D$ é um coeficiente, $A$ é a área da seção transversal da esfera ($\pi D^2 /4$), $\rho$ é a massa específica do ar (ou qualquer outro fluido) e $U$ é a velocidade de queda. Conhecendo $C_D$, podemos estimar a velocidade terminal:
+onde $C_D$ é um coeficiente, $A$ é a área da seção transversal da esfera ($\pi D^2 /4$), $\rho$ é a massa específica do ar (ou qualquer outro fluido) e $U$ é a velocidade de queda. Neste modelo, com o passar do tempo, a velocidade aumenta mas com isso também aumenta a força de arrasto, reduzindo a aceleração. Se esperarmos tempo o suficiente, a força de arrasto irá se igualar com o peso e não haverá mais aceleração. Esta velocidade é conhecida como velocidade terminal. Conhecendo $C_D$, podemos estimar a velocidade terminal:
 \[
 U = \sqrt{\frac{2 m g}{C_D A \rho}}
 \]
 
-O segredo é não olhar com atenção demais estas equações. $C_D$ varia com a velocidade (mais precisamente com um número adimensional chamado de número de Reyniolds), as forças podem não estar alinhadas na vertical, nenhuma bola é uma esfera perfeita  e por aí vai. Mas com cuidado e discernimento, pode-se chegar longe com estes modelos simples. Mas a realidade é muito mais complexa. Quem não se lembra das reclamações sobre a bola Jabulani na copa de 2010. Quem diria que uma bola de futebol poderia causar tantos problemas no século XXI. Nem vou mencionar o quão difícil é jogar bola com uma bexiga...
+O segredo é não olhar com atenção demais estas equações. $C_D$ varia com a velocidade (mais precisamente com um número adimensional chamado de número de Reynolds) mas também varia com a orientação do corpo. As forças podem não estar alinhadas na vertical e variar no tempo (estas duas situações ocorrem na realidade), nenhuma bola é uma esfera perfeita  e por aí vai. Mas com cuidado e discernimento, pode-se chegar longe com estes modelos simples. Mas a realidade é muito mais complexa. Quem não se lembra das reclamações sobre a bola Jabulani na copa de 2010. Quem diria que uma bola de futebol poderia causar tantos problemas no século XXI. Nem vou mencionar o quão difícil é jogar bola com uma bexiga. Estes dois exemplos não se resumem à queda vertical de uma esfera mas mostram que a dinâmica de uma esfera em um meio fluido é mais complexo do que parece. O vídeo \url{https://www.youtube.com/watch?v=16Ci_2bN_zc} do excelente canal Veritassium entra em maiores detalhes sobre a velocidade terminal de corpos caindo.
 
-Este modelo ainda tem um problema sério: uma bexiga com hélio ou uma bola de ping-pong dentro d'água. Então podemos introduzir um novo termo: princípio de Arquimedes. No entanto, agora uma nova dificuldade aparece: qual a direção da força de arrasto? Considerando a direção z como vertical,
+Este modelo ainda tem um problema sério: uma bexiga com hélio ou uma bola de ping-pong dentro d'água vai ter um comportamente bem diferente. Então podemos introduzir um novo termo na equação: o princípio de Arquimedes. No entanto, agora uma nova dificuldade aparece: qual a direção da força de arrasto? Considerando a direção z como vertical para cima,
 
 \[
-m \frac{d^2 z}{dt^2} = -mg - C_D A \frac{1}{2} \rho |U|\cdot U + \rho g V
+m \frac{d^2 z}{dt^2} = -mg - C_D A \frac{1}{2} \rho |U|\cdot U + g m_f
 \]
-Agora temos um modelo que funciona, mais ou menos bem. Leva em consideração a força de arrasto, a flutuação e o campo gravitacional. Existe uma caixa preta que é o coeficiente de arrasto $C_D$. Todas as limitações discutidas acima permanecem mas este modelo pode fornecer várias informações interessantes. Um modelo mais sofisticado poderia ser utilizado para o coeficiente de arrasto. Para se resolver esta equação diferencial, precisamos das condições iniciais: No instante, $t=0$, $U=U_0$ (no nosso exemplo $U_0 = 0$) e $z=0$.
-
-Este modelo tem uma escala importante: o peso do corpo $mg$. Outra escala importante é a massa específica do fluido $\rho$. Olhando a equação poderia se dizer que a velocidade é uma outra escala mas no nosso exemplo, a velocidade inicial é nula e portanto a velocidade instantânea é o que se deseja calcular! Por outro lado, caso a velocidade inicial seja diferente zero, isso introduz uma escala de velocidade $U_0$.  Ainda existem as escalas ligadas à geometria do corpo: a área $A$ e o volume $V$. No caso de uma esfera, temos $A = \pi D^2/4$ e $V = \pi/6 D^3$ onde $D$ é o diâmetro da esfera e pode ser considerada a escala de dimensão. Finalemente não podemos esquecer do coeficiente de arrasto $C_D$ e a aceleração da gravidade.
-
-
-
-
+onde $z$ é a altura da esfera, e $m_f$ é a massa de fluido se a esfera fosse feita do mesmo fluido que o meio e pode ser escrita como $\rho\cdot g \cdot V$ onde $V$ é o volume ocupado pelo corpo. Agora temos um modelo que funciona, mais ou menos bem. Leva em consideração a força de arrasto, a flutuação e o campo gravitacional. Existe uma caixa preta que é o coeficiente de arrasto $C_D$. Todas as limitações discutidas acima permanecem mas este modelo pode fornecer várias informações interessantes. Para se resolver esta equação diferencial, precisamos das condições iniciais: No instante, $t=0$, $U=U_0$ (no nosso exemplo $U_0 = 0$) e $z=0$.
 
 \subsection{Escalas}
 
-Acima muito se falou de simplificação. No fundo, isso é desprezar um fenômeno, o que não é o mesmo que ignorar sua existência ou desprezar seu efeito. Simplificando o problema chega-se a uma melhor compreensão do que está acontecendo. A ciência é, por construção, reducionista e essa é sua maior virtude. Aos poucos pode-se criar um modelo mais completo e realista do problema. Saber o que ignorar em um modelo é a etapa mais importante na modelagem. Isso requer usar uma régua do tamanho certo e observar da distância mais adequada e para isso temos que estimar as escalas do problema.  Fenômenos complexos em uma certa escala podem se tornar simples em outra: em um volume grande o suficiente, toda a cinética  de um número enorme de moléculas do ar pode ser resumido a dois parâmetros como pressão e temperatura por exemplo. Em astronomia é comum considerar planetas luas e asteróides como pontos materiais. É isso que permite desprezar algum fenômeno.
+
+Fazem parte deste modelo diferentes parâmetros, $m$, $g$, $C_D$, $A$, $\rho$ e  $V$. Estes parâmetro não são independentes. Dado um corpo rígido, existe uma relação entre volume e área. A razão entre os dois é um comprimento que no caso de uma esfera, vale
+\[
+\frac{V}{A} = \frac{2}{3}\cdot D
+\]
+
+Se quisermos saber a velocidade terminal, basta postular que a aceleração é zero:
+\[
+mg + C_D A \frac{1}{2} \rho |U|\cdot U  = g \rho V
+\]
+Dividindo esta equação por $g \rho V$ chegamos à seguinte relação:
+\[
+\left| \frac{m}{\rho V} - 1 \right| = \frac{C_D A U^2}{2 V g}
+\]
+
+Lembrando que existe uma relação entre volume e área, e definindo $L = \sqrt[3]{V}$
+\[
+\left| \frac{m}{\rho L^3} - 1 \right| = k \cdot \frac{U^2}{L g}
+\]
+onde $k$ é uma constante que depende da geometria e incorpora não apenas a razão entre volume e área mas também o coeficiente de arrasto e constante 2. Este problema, da maneira que está escrito, depende dos seguintes parâmetros:
+
+\begin{itemize}
+\item $m$ - massa do corpo
+\item $\rho L^3$ - massa do fluido deslocado pelo corpo
+\item $Lg$ - Dimensão vezes aceleração da gravidade
+\item $k$ - um coeficiente que depende da geometria e aerodinâmica
+\end{itemize}
+
+\subsection{Parâmetros adimensionais}
+Nesta última equação, os termos $\frac{m}{\rho L^3}$, $k$ e $\frac{U^2}{L g}$ não possuem unidades, ou seja, mudando o sistema de unidades o valor destas grandezas fica constante. Estas são grandezas adimensionais. Repare que neste modelo, estes parâmetros adimensionais são resultado da razão de forças - dividimos a equação original pela força de flutuação.
+
+\subsection{Semelhança}
+Estes parâmetros adimensionais, produto de manipulação simples do modelo original, tem consequências interessantes. Neste modelo, fixado os parâmetros adimensionais $\frac{m}{\rho L^3}$ e $k$, o outro parâmetro adimensional $\frac{U^2}{Lg}$ é conhecido. Podemos mudar a massa, densidade do fluido, aceleração da gravidade e dimensões do corpo mas enquanto estes parâmetros forem os mesmos, teremos um mesmo valor de $\frac{U^2}{Lg}$. Este é o resultado mais conhecido da Análise Dimensional e é essencial na condução de experimentos em escala reduzida.
+
+\subsection{Um modelo é uma idealização do problema}
+Chegamos a um modelo para a velocidade  problema da queda de um corpo. Para se chegar a este modelo utilizamos uma relação básica da dinâmica, a segunda lei de Newton e um modelo empírico para a força de arrasto de um corpo. A maneira como empregamos a segunda lei de Newton já pressupõe várias simplificações no problema como o fato da força de arrasto estar alinhado com a vertical o que sabemos não ser verdade para a queda de uma pena. Escondemos todas as dificuldades no coeficiente semi-empírico $C_D$. Sabemos que a realidade é muito mais complicada. Mas este modelo pode fornecer informações importantes. Mesmo no caso da queda de uma pena, um coeficiente de arrasto médio pode fornecer informações importantes.
+
+Na pior das hipóteses, um modelo simples permite compreender melhor o problema real e estimar as grandezas importantes do problema, facilitando o projeto de experimentos mais sofisticados.
+
+\subsection{Estrutura deste artigo}
+
+Com o exemplo do corpo caindo em um meio fluido em um campo gravitacional constante, introduzimos vários conceitos como modelos, parâmetros adimensionais e semelhança. Vamos, agora, entrar mais a fundo em cada questão. Geometria simples será usada para entender melhor os parâmetros adimensionais e semelhança. Em seguida usaremos estes conceitos em alguns problemas simples com equações diferenciais conhecidas, em particular a aerodinâmica de uma esfera. Finalmente apresentaremos a análise dimensional e o teorema dos $\Pi$s de Buckingham.
 
 
-
-
-\subsection{Análise dimensional e mecânica dos fluidos}
-
-Aqui vamos tratar de um assunto que na literatura costuma ser chamado de análise dimensional e semelhança. A maioria dos livros didáticos de mecânica dos fluidos tem um capítulo com este título ou algo muito parecido. Neste contexto, duas questões surgem: porque escrever mais sobre este assunto aparentemente já batido, e porque usar um título diferente. A resposta para estas duas perguntas é a mesma: o nome análise dimensional está muito ligado ao teorema dos $\Pi$s de Buckingham. Um resultado interessantíssimo e útil mas que no final não passa de um algorítmo para simplificar problemas onde se perde a física a ponto deste resultado parecer matemágica - e não é. Existem outras maneiras de se encarar este assunto.
-
- Ao contrário da sabedoria popular, o objetivo da ciência não é chegar à ``Verdade'' com V maiúsculo mas sim encontrar modelos que melhor explicam algum fenômeno e permitam compreender como diferentes aspectos da natureza se relacionam. A nossa compreensão do universo é realmente surpreendente quando comparado com o que nossos antepassados conheciam até poucos séculos (ou mesmo décadas) atrás. 
-
-Como constatou Feynman \cite{Feynman14}, praticamente todos os fenômenos que nos afetam, satisfazem as equações da eletrodinâmica quântica e hoje pouca gente duvida disso. No entanto, não se vêem engenheiros civis se especializando em mecânica quântica para construir uma ponte. Detalhes podem ser, algumas vezes, desprezados. Outras vezes os detalhes podem ser simplificados. Não se deve esquecer que o objetivo principal de um modelo é permitir que se reflita sobre um problema, ou seja, ganhar \emph{insight}. É isto o que permite entender como a variação de algum parâmetro afeta o problema. Caso haja muito detalhe, é praticamente certo que o analista se perca numa vastidão de irrelevâncias. 
-
-Não se pode negar que existe uma relação profunda entre análise dimensional e mecânica dos fluidos (ou fenômenos de transporte em geral). Adimensionalizar grandezas é praticamente uma obsessão e em mecânica dos fluidos.  A ``Análise Dimensional'' é ensinada em mecânica dos fluidos. O teorema dos $\Pi$s de Buckingham só é ensinado em cursos de mecânica dos fluidos. Estes mesmos materiais didáticos costumam enfatizar como o método é aplicável em praticamente qualquer área do conhecimento, da mecânica à economia. Mas apesar disso, o método só é ensinado e aplicado de maneira sistemática em mecânica dos fluidos e áreas afins. É difícil encontrar alguma menção ao teorema dos $\Pi$s de Buckingham em qualquer livro de física ou qualquer outra área. Isto  é algo que merece reflexão.
-
-A realidade é que não existe problema fácil em mecânica dos fluidos. Existem soluções e aproximações obtidas por meios analíticos, numéricos e principalmente experimentos em laboratórios. Dada esta dificuldade é imperativo interpolar, extrapolar e reciclar as soluções existentes. Mesmo a popularização de ferramentas de CFD (\emph{Computational Fluid Dynamics}) não mudaram muito esta situação: os modelos de turbulência ainda são limitados demais para que sejam aplicados sem maior preocupação.
-
-É interessante comparar a mecânica dos fluidos, um ramo da mecânica do contínuo com seu primo, a mecânica de sólidos. Uma aproximação como a teoria da elasticidade linear ou mesmo teoria de vigas permite resolver de maneira satisfatória praticamente todos os problemas em resistância dos materiais. Quando estas simplificações falham, a regra é projetar para que as estruturas não saiam das condições de aplicabilidade destas simplificações. Fenômenos como propagação de trincas apresentam dificuldades enormes mas o projetista, em geral, projeta uma estrutura de modo que ela trabalhe na região elástico linear.
-
-No caso de fluidos, a linearização permite obter soluções interessantes mas extremamente limitadas. Escoamento potencial é útil mas só pode ser empregado em algumas regiões do escoamento e ainda com cuidado.
-
-Por outro lado, o uso de parâmetros adimensionais é usado extensivamente em física sem qualquer menção a análise dimensional ou o teorema dos $\Pi$s de Buckingham. Para se simplificar um problema, é necessário estimar as ordens de grandeza de cada termo de uma equação. Esta é a essência da análise dimensional. O teorema dos $\Pi$s de Buckingham é uma sistematização deste processo em um algoritmo de ampla aplicabilidade. Talvez a ênfase muito grande neste teorema tenha levado os fluido dinamicistas a subestimar a essência física da análise dimensional.
-
-\subsection{Literatura}
-A literatura sobre análise dimensional não é muito extensa (desconsiderando livros didáticos de mec-flu) mas é muito rica. Obras como o clássicas como \citeonline{Bridgman22}  ainda são atuais. Livros como \citeonline{Sedov59} possuem pérolas em abundância mas a abordagem adotada neste trabalho é inspirada por Barenblatt em diversas de suas publicações \cite{Barenblatt03} e no livro de Mecânica dos fluidos \citeonline{Tritton88} que não fala em momento nenhum de teorema dos $\Pi$s!
 
 \section{Um pouco de geometria}
 

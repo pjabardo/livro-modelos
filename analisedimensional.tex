@@ -1,0 +1,56 @@
+\section{Análise dimensional}
+\label{sec:adim}
+
+Finalmente, a Análise Dimensional tradicional será abordada. A abordagem aqui foi retirada de \citeonline{Barenblatt03}. 
+
+Quando se analisou o pêndulo simples, 
+Esta equação pode ser reescrita como:
+\[
+\frac{L}{g}\frac{d^2\theta}{dt^2} + \sin\theta = 0 
+\]
+o que se fez foi modificar o tempo, introduzindo as escalas do problema de modo que o fator $L/g$ desaparece da equação. Uma outra maneira de enxergar isto é mudar o sistema de unidades utilizado para exprimir $L/g$ de modo que este parâmetro tenha valor numérico unitário a assim se obtém a equação diferencial adimensional. Considere um caso concreto com $L = 1\:m$ e $g = 10\: m/s^2$, $L/g=0.1\:s^2$. Se uma nova unidade de tempo $p$ for utilizada onde 
+\[
+1\:s = \sqrt{\frac{g}{L}}\:p
+\] 
+Esta mudança de unidades faz o truque. Esta nova unidade de tempo tem um aspecto novo: varia dependendo do comprimento do pêndulo e da aceleração da gravidade.
+
+A idéia básica por trás da análise dimensional é que um fenômeno físico não pode depender das unidades empregadas. Escolhendo um sistema de unidades de maneira inteligente permite simplificar um problema como se viu neste exemplo do pêndulo simples.
+
+Para avançar será necessário introduzir de maneira mais rigorosa os conceitos de unidade, sistemas de unidades e dimensões.
+
+\subsection{Unidades}
+
+Quando se fala que uma pessoa tem 1,82 m de altura, o que se quer dizer é que a altura desta pessoa é 1,82 vezes a altura de uma barra padrão armazenada no BIPM (Bureau International des Poids e Mesures) que se convencionou chamar de 1 m. Analogamente se esta mesma pessoa tem 90 kg de massa, isto quer dizer que a massa desta pessoa é 90 vezes a massa de um corpo armazenado no BIPM.
+
+Existem outras medidas que são um pouco diferentes, velocidade por exemplo. Uma bicicleta tipicamente se locomove a 15 km/h. Se esta velocidade permanecer constante, a bicicleta se locomove 15 km durante um período de uma hora. Observe que esta unidade envolve duas outras: uma de espaço e outra de tempo. Esta é uma unidade derivada que é definida a partir de outras grandezas e a notação km/h é simplesmente uma convenção e não quer dizer que estamos dividindo km por h.
+
+\subsection{Sistemas de unidades}
+
+Em algumas situações, pode ser interessante representar uma grandeza, que é geralmente uma unidade derivada, como uma unidade básica. No caso da velocidade, se ela é definida como uma grandeza básica, o tempo pode ser definido a partir da velocidade e do comprimento. Parece absurdo? Lembre que no vácuo a velocidade da luz é uma constante absoluta e isto pode ser interessante.
+
+Um dado fenômeno físico envolve diferentes parâmetros, cada um com sua unidade. Um sistema de unidades é o conjunto de unidades independentes que permite descrever este fenômeno. Em problemas de cinemática, o metro e o segundo definem um sistema de unidades. Para problemas em mecânica é necessário uma outra unidade, em geral o kilograma. Neste caso temos o sistema de unidades (m,s,kg). Em algumas situações pode ser interessante substituir o kilograma por uma unidade de força, o kgf por exemplo.
+
+Se o fenômeno envolver calor, introduz-se uma nova unidade, o Kelvin (K) para a temperatura. A temperatura é um caso interessante pois, utilizando a teoria cinética da materia, poderia ser definida como uma unidade derivada. Mas este é um processo complicado e é mais conveniente definir-se uma unidade independente.
+
+Em se tratando de sistemas de unidades, a palavra chave é conveniência. O metro padrão ainda existe o no BIPM mas isto é apenas uma curiosidade histórica. Em situações específicas pode ser interessante usar uma grandeza que não parece fundamental ou nem mesmo constante como unidade básica. Um exemplo comum é utilizar a atração gravitacional da terra para definir força - é aí que surgem unidades como kilograma força e se gera confusão com unidades como a libra. Esta flexibilidade na definição dos sistemas de unidades é vista em detalhes \citeonline{Sedov59}.
+
+\subsection{Classe de um sistema de unidades}
+
+Qual a diferença entre usar um sistema de unidades como (m, s, kg) por outro como (milha, hora, tonelada)? O que se representa utilizando o primeiro sistema de unidades pode ser representado com tanta precisão pelo segundo sistema de unidades. Sistemas de unidades onde apenas as unidades das grandezas básicas variam formam uma classe de sistema de unidades. Ao se mudar as unidades de um sistema de unidades de uma dada classe, o que se estáfazendo é mudar o valor numérico de cada grandeza por um fator conhecido:
+
+\[
+\begin{matrix}
+  1\:m = L\:km & 1\:s = T\:h & 1\:kg = M\:g\\
+  L=\frac{1}{1000} & T = \frac{1}{3600} & M = 1000\\
+\end{matrix}
+\]
+Esta classe de sistema de unidades é conhecido como LMT. A principal característica de uma classe de sistema de unidades é que não existe um sistema preferencial. Todos os sistemas de uma mesma classe são equivalentes.
+
+A dimensão de uma grandeza define como o valor numérico desta grandeza varia quando o sistema de unidades muda para outro da mesma classe. No caso de um comprimento, se a unidade muda de metro para kilômetro, o valor numérico do comprimento aumenta por um fator L que é sua dimensão. O mesmo vale para as outras unidades básicas e \emph{também para as unidade derivadas}. No sistema (m,s,kg), a unidade de força é denominada por N, onde
+\[
+1\:N = 1\:\frac{kg\cdot m}{s^2}
+\]
+Se o sistema de unidades for mudado para km, h, ton: 
+
+
+\subsection{O teormea dos $\Pi$s de Buckinham}

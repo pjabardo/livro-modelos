@@ -1,0 +1,56 @@
+\section{Será que podemos simplificar este processo?}
+
+Até este momento as equações básicas de um fenômeno e as principais escalas do problema foram utilizadas para se ``simplificar'' o problema. Cada fenômeno é caracterizado pelas seguintes grandezas:
+\begin{itemize}
+\item \emph{Variáveis independentes}. Variáveis como a posição ($x$, $y$ e $z$) ou tempo.
+\item \emph{Variáveis dependentes}. Geralmente a grandeza que se deseja calcular como por exemplo velocidade e pressão no caso do escoamento incompressível, temperatura no problema de difusão de calor e ângulo no pêndulo simples.
+\item \emph{Parâmetros}. Geralmente dimensões características e propriedades materiais como viscosidadeou densidade. 
+\end{itemize}
+
+\subsection{Ordem de grandeza de cada termo de uma equação diferencial}
+Utilizando as principais escalas do fenômeno, transformam-se as variáveis dependentes e independentes de modo que tenham valores com ordem de grandeza $\bigO{1}$ (variáveis com sub-índice $*$). Analisemos novamente a equação de Navier-Stokes para a esfera:
+\begin{equation}
+\frac{U_0^2}{D}\frac{\pd\p{u_*}}{\pd t_*} + \frac{U_0^2}{D}\p{u}\cdot\nabla_*\p{u} = -\frac{U_0^2}{D}\nabla_* p + \frac{U_0\nu}{D^2}\nabla_*^2\p{u_*} 
+\label{eq:ns2}
+\end{equation}
+
+Por construção, cada fator envolvendo variáveis dependentes e suas derivadas têm ordem de grandeza 1. Por exemplo, uma derivada pode ser representada como 
+\[
+\frac{\pd u}{\pd x} = \frac{U_0}{D}\cdot\frac{\pd u_*}{\pd x_*} = \bigO{\frac{U_0}{D}}
+\]
+A equação de Navier-Stokes apresenta uma relação entre diferentes termos de modo que se um termo aumenta, os outros termos devem variar para que a equação continue sendo satisfeita.
+
+Como se viu na região da camada limite, algumas vezes, estas estimativas estão erradas. Mas isto simplismente significa que o termo não deve ser desprezado e para que o termo seja importante deve ter, pelo menos, a mesma ordem de grandeza que o resto da equação e portanto, existe um fator multiplicativo $\gamma$ que corrige a estimativa obtida e este fator varia lentamente:
+\[
+\frac{U_0^2}{D} \sim \gamma \cdot \frac{U_0\nu}{D^2} \qrq \gamma = \bigO{\frac{U_0 D}{\nu}}
+\]
+
+\subsection{Usando diretamente os princípios da física com estimativas de ordem de grandeza}
+As equações diferenciais que modelam um fenômeno são resultado de algum princípio físico. A equação de Navier-Stokes, por exemplo, é aplicação direta da Segunda lei de Newton. O lado esquerdo desta equação representa a aceleração e o lado direito as forças atuando no fluido. Com as estimativas das forças e os princípios básicos da física, pode-se simplificar a análise de semelhança. 
+
+Voltemos ao exemplo de uma esfera em uma base elástica mas foquemos na dinâmica da esfera e não do fluido. Na esfera estão atuando as seguintes forças:
+\begin{itemize}
+\item $F_E$ - Forças elásticas da mola: $F_E \sim k\cdot D$ ($k$ é a constante da mola)
+\item $F_V$ - Forças viscosas: $F_v \sim \tau_v \cdot A = \mu U_0/D \cdot D^2$ ($\tau_v$ é a estimativa da tensão viscosa e $A$ é estimativa dá área superfícial da esfera)
+\item $F_P$ - Forças devido a pressão: $F_P = \tau_P \cdot A = \rho U_0^2 D^2$ ($\tau_P$ é a estimativa da tensão devido a pressão)
+\end{itemize}
+O resultado da ação destas forças é a massa $\times$ aceleração que pode ser estimado por $mU_0^2/D$. Assim a segunda lei de Newton pode ser aplicada:
+\[
+ma = \sum_i F_i \qrq \bigO{m\frac{U_0^2}{D}} = \bigO{k\cdot D} + \bigO{\rho U_0^2 D^2} + \bigO{\mu U_0 D}
+\]
+
+O que foi feito na relação acima foi suprimir os termos envolvendo variáveis com sub-índice ``$*$'' supondo que estas termos têm ordem de grandeza 1. Os parâmetros adimensionais surgem quando se compara a grandeza relativa de cada termo. Na equação acima, divindo todos os termos por $\rho U_0^2 D^2$, temos
+\[
+\bigO{\frac{m}{\rho D^3}} = \bigO{\frac{k}{\rho U_0^2 D}} + \bigO{1} + \bigO{\frac{\mu}{\rho U_0 D}}
+\]
+Nesta expressão aparecem a razão entre massas $\rho D^3/m$ e o número de Reynolds. Caso a equação seja divida por $m U_0^2/D$ a seguinte relação aparece:
+\[
+\bigO{1} = \bigO{\frac{\omega_N^2 D^2}{U_0^2}} + \bigO{\frac{\rho D^3}{m}} + \bigO{\frac{\mu D^2}{m U_0}}
+\]
+o primeiro termo do lado direito nada mais é que $1/V_R^2$. Todas estas grandezas adimensionais podem ser escritas como produto de potências dos seguintes adimensionais:
+\[
+\frac{\rho U_0 D}{\mu} \qquad \frac{\rho D^3}{m} \qquad \frac{U_0}{\omega_N D}
+\]
+
+Este processo pode ser repetido utilizando qualquer princípio básico da física como as leis da termodinâmica, princípios de transferência de calor. A idéia básica aqui é comparar os diferentes termos das equações básicas a partir de estimativas básicas de ordem de grandeza. O fato destas grandezas muitas vezes estarem erradas (como no caso da camada limite) não introduz maiores complicações: o número de Reynolds continua aparecendo. Esta metodologia é simplesmente um algorítimo que sistematiza o que foi feito até o momento mas sem construir diretamente as equações diferenciais.
+

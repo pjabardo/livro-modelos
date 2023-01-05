@@ -1,22 +1,11 @@
 \section{Análise dimensional}
 \label{sec:adim}
 
-Finalmente, a Análise Dimensional tradicional será abordada. A abordagem aqui foi retirada de \citeonline{Barenblatt03}. 
+Finalmente, a Análise Dimensional tradicional será abordada. A abordagem aqui foi retirada de \citeonline{Barenblatt03}. Começaremos falando das unidades
 
-Quando se analisou o pêndulo simples, 
-Esta equação pode ser reescrita como:
-\[
-\frac{L}{g}\frac{d^2\theta}{dt^2} + \sin\theta = 0 
-\]
-o que se fez foi modificar o tempo, introduzindo as escalas do problema de modo que o fator $L/g$ desaparece da equação. Uma outra maneira de enxergar isto é mudar o sistema de unidades utilizado para exprimir $L/g$ de modo que este parâmetro tenha valor numérico unitário a assim se obtém a equação diferencial adimensional. Considere um caso concreto com $L = 1\:m$ e $g = 10\: m/s^2$, $L/g=0.1\:s^2$. Se uma nova unidade de tempo $p$ for utilizada onde 
-\[
-1\:s = \sqrt{\frac{g}{L}}\:p
-\] 
-Esta mudança de unidades faz o truque. Esta nova unidade de tempo tem um aspecto novo: varia dependendo do comprimento do pêndulo e da aceleração da gravidade.
 
-A idéia básica por trás da análise dimensional é que um fenômeno físico não pode depender das unidades empregadas. Escolhendo um sistema de unidades de maneira inteligente permite simplificar um problema como se viu neste exemplo do pêndulo simples.
 
-Para avançar será necessário introduzir de maneira mais rigorosa os conceitos de unidade, sistemas de unidades e dimensões.
+
 
 \subsection{Unidades}
 
@@ -52,5 +41,49 @@ A dimensão de uma grandeza define como o valor numérico desta grandeza varia q
 \]
 Se o sistema de unidades for mudado para km, h, ton: 
 
+
+
+
+
+Para variar vamos começar com o problema do escoamento ao redor de uma esfera. Nós começamos analisando o problema a partir das equações de Navier-Stokes, admitindo que o escoemento é incompressível. Na análise que fizemos, a força de arrasto dependia dos seguintes parâmetros:
+\begin{itemize}
+\item $D$, diâmetro da esfera
+\item $U_0$, velocidade do escoamento ao longe
+\item $\rho$, massa específica do fluido
+\item $\mu$, viscosidade do fluido
+\end{itemize}
+
+Assim,
+\[
+F_a = F_a(D, U_0, \rho, \mu)
+\]
+na análise que fizemos usando as equações diferenciais, temos estes mesmos parâmetros. Por outro lado, com alguma experiência, poderíamos ter postulado essa relação. A palavra chave aqui é experiência.
+
+Até este ponto usamos unidades sem entrar a fundo no seu significado. A idéia da análise dimensional é que a lei acima independe do sistema de unidades utilizado. No sistema internacional, as grandezas acima usam as seguintes unidades:
+
+\begin{itemize}
+\item $D$, comprimento, $m$
+\item $U_0$, velocidade, $m/s$
+\item $\rho$, massa específica, $kg/m^3$
+\item $\mu$, viscosidade, $Pa\cdot s = N/m^2 \cdot s$
+\item $F_a$, força, $N$
+\end{itemize}
+
+Falaremos mais sobre unidades adiante, mas neste momento, o que interessa é
+ Agora vamos partir de um ponto de vista mais abstrato.
+Quando se analisou o pêndulo simples, 
+Esta equação pode ser reescrita como:
+\[
+\frac{L}{g}\frac{d^2\theta}{dt^2} + \sin\theta = 0 
+\]
+o que se fez foi modificar o tempo, introduzindo as escalas do problema de modo que o fator $L/g$ desaparece da equação. Uma outra maneira de enxergar isto é mudar o sistema de unidades utilizado para exprimir $L/g$ de modo que este parâmetro tenha valor numérico unitário a assim se obtém a equação diferencial adimensional. Considere um caso concreto com $L = 1\:m$ e $g = 10\: m/s^2$, $L/g=0.1\:s^2$. Se uma nova unidade de tempo $p$ for utilizada onde 
+\[
+1\:s = \sqrt{\frac{g}{L}}\:p
+\] 
+Esta mudança de unidades faz o truque. Esta nova unidade de tempo tem um aspecto novo: varia dependendo do comprimento do pêndulo e da aceleração da gravidade.
+
+A idéia básica por trás da análise dimensional é que um fenômeno físico não pode depender das unidades empregadas. Escolhendo um sistema de unidades de maneira inteligente permite simplificar um problema como se viu neste exemplo do pêndulo simples.
+
+Para avançar será necessário introduzir de maneira mais rigorosa os conceitos de unidade, sistemas de unidades e dimensões.
 
 \subsection{O teormea dos $\Pi$s de Buckinham}

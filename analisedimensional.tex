@@ -1,7 +1,109 @@
 \section{Análise dimensional}
 \label{sec:adim}
 
-Finalmente, a Análise Dimensional tradicional será abordada. A abordagem aqui foi retirada de \citeonline{Barenblatt03}. Começaremos falando das unidades
+Finalmente, a Análise Dimensional tradicional será abordada. A abordagem aqui foi retirada de \citeonline{Barenblatt03}. Começaremos com  uma visão global para entrar nos detalhes sobre unidades, sistemas de unidades, o teorema de Buckingham.
+
+\subsection{Escoamento viscoso ao redor de uma esfera}
+
+A gênesis da análise dimensional e o teorema dos $\Pi$s de Buckingham é o fato de que as leis físicas não deveriam depender do sistema de unidades. Falaremos em maiores detalhes sobre unidades e sistemas de unidades mas para começar utilizaremos as idéias que qualquer um lendo este texto até aqui tem (ou deveria ter...).
+
+Voltemos ao nosso velho problema de determinar a força de arrasto em uma esfera. A partir das equações diferenciais para o escoamento viscoso incompressível, sabemos que a força de arrasto depende de algumas grandezas:
+
+\[
+F = F(U, D, \rho, \mu)
+\]
+Cada grandeza acima, tem uma unidade associada. No sistema internacional estas unidades são:
+
+\begin{itemize}
+\item $F$ - força de arrasto, $N=kg\cdot m/s^2$
+\item $U$ - Velocidade da esfera, $m/s$
+\item $D$ - diâmetro da esfera, $m$
+\item $\rho$ - massa específica do fluido, $kg/m^3$
+\item $\mu$ viscosidade do fluido, $Pa\cdot s = kg/(m\cdot s)$
+\end{itemize}
+
+Podemos mudar as unidades utilizadas. Assim, se mudarmos a unidade de comprimento para $mm$ por exemplo, os valores numéricos dos parâmetros acima mudarão correspondentemente:
+
+\begin{itemize}
+\item $D \lra L \cdot D$
+\item $U \lra L \cdot U$
+\item $\rho \lra  \rho / L^3$
+\item $\mu \lra \mu / L$
+\item $F \lra L \cdot F$
+\end{itemize}
+
+onde $L = 1000$ é o fator de conversão de $m$ para $mm$.
+
+O mesmo processo pode ser feito com os outros parâmetros mas com uma complicação: os outros parâmetros possuem unidades compostas. A unidade de velocidade $U$ em SI é $m/s$, depende da unidade de comprimento e da unidade de tempo. Já a densidade depende da unidade de massa e da unidade de comprimento. Da mesma maneira, a unidade de força, assim como a unidade de viscosidade,  depende da unidade de massa, comprimento e tempo. Cada uma destas unidades básicas (comprimento, massa e tempo) podem ser variadas de maneira independente. Assim, se a unidade de comprimento for variada por um multiplicador $L$, a de massa por um multiplicador $M$ e o tempo por um multiplicador $T$, os valores numéricos dos parâmetros $U$, $D$, $\rho$, $\mu$ e $F$ variam da seguinte maneira:
+
+\begin{itemize}
+\item $D \lra (L) \cdot D$
+\item $U \lra (L/T) \cdot U$
+\item $\rho \lra  (M/L^3) \cdot\rho$
+\item $\mu \lra \{M/(L\cdot T)\}\cdot\mu$
+\item $F \lra (M \cdot L / T^2) \cdot F$
+\end{itemize}
+
+O que vamos fazer, é escolher um sistema de unidades específico para nosso problema. Este sistema de unidades será construído de modo que neste novo sistema, numericamente, $D = U = \rho = 1$.
+
+Para o comprimento,
+\[
+L \cdot D = 1 \qrq L = \frac{1}{D}
+\]
+Já para a velocidade,
+\[
+\frac{L}{T} \cdot U = 1 \qrq T = \frac{U}{D}
+\]
+para a densidade,
+\[
+\frac{M}{L^3} \cdot \rho = 1 \qrq M = \frac{1}{\rho D^3}
+\]
+
+Agora, não podemos especificar de maneira independente as unidades de $F$ e $\mu$ que tomam os seguintes valores:
+
+\[
+\frac{M}{L\cdot T} \cdot \mu = \frac{\mu}{\rho U D} = \frac{1}{Re}
+\]
+e
+\[
+\frac{M\cdot L}{T^2} \cdot F = \frac{F}{\rho D^2 U^2} = C_D
+\]
+
+Neste novo sistema de unidades, a relação original proposta para a força de arrasto, apresenta os seguintes valores numéricos:
+
+\[
+\frac{F}{\rho D^2 U^2} = F\left(1,1,1, \frac{1}{Re} \right)
+\]
+Neste novo sistema de unidades, \emph{que muda com o valor de cada parâmetro}, temos uma relação mais simples:
+\[
+C_D = C_D(Re)
+\]
+mesmo resultado obtido a partir das equações de Navier-Stokes!
+
+O leitor distraído pode achar que isso é \emph{matemágica} mas justificativa é simples.A unidade SI para velocidade é $m/s$, esta relação é resultado de uma definição:
+\[
+U = \frac{\Delta X}{\Delta t}
+\]
+esta definição de velocidade determina uma que a velocidade é uma relação entre espaço e tempo. Já a unidade de força $N = kg\cdot m/s^2$ vem de uma lei física, a segunda lei de Newton:
+\[
+F = ma = m\frac{dv}{dt}
+\]
+e isso mostra que a força é uma relação entre variação de velocidade e tempo. A unidade de força é, então, resultado de uma lei física bem estabelecida. Mas o que é a equação de Navier-Stokes? Nada mais que a \emph{aplicação da segunda lei de Newton para um fluido contínuo}.
+
+O mesmo acontece com a viscosidade que é definida a partir da tensão de cisalhamento que ocorre quando existe um gradiente de velocidade:
+\[
+\tau = \mu \frac{dU}{dy}
+\]
+mas a tensão de cisalhamento nada mais é que uma força superficial dividida pela área:
+\[
+\tau = \frac{F}{A} = \frac{F}{L^2}
+\]
+assim, o que fizemos aqui foi empregar os princípios usados para se obter as equações diferenciais do escoamento ao redor de uma esfera de maneira mais abstrata. Esta abordagem abstrata tem vantagens mas teríamos que postular que $F = F(U, D, \rho, \mu)$. Além disso em problemas mais complexos pode não ser tão evidente quais influências podem ser desprezadas, de modo que partir de uma equação conhecida é mais seguro e mais robusto que esta abordagem abstrata.
+
+Uma coisa deve ficar clara, na análise dimensional estamos usando nosso conhecimento prévio de um problema para se chegar numa simplificação. Não é possível criar uma ``nova física'' com análise dimensional!
+
+O famoso teorema dos $\Pi$s de Buckingham não são nada além de uma aplicação sistemática do que fizemos acima. Para se chegar a este resultado, iremos explorar mais o que é unidade, sistema de unidades e classe de unidades.
+
 
 
 

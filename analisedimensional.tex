@@ -1,7 +1,7 @@
 \section{Análise dimensional}
 \label{sec:adim}
 
-Finalmente, a Análise Dimensional tradicional será abordada. A abordagem aqui foi retirada de \citeonline{Barenblatt03}. Começaremos com  uma visão global para entrar nos detalhes sobre unidades, sistemas de unidades, o teorema de Buckingham.
+Finalmente, a Análise Dimensional tradicional será abordada. A abordagem aqui foi retirada de \citeonline{Barenblatt96} e \citeonline{Barenblatt03}. Começaremos com  uma visão global para depois entrar nos detalhes sobre unidades, sistemas de unidades, o teorema de Buckingham.
 
 \subsection{Escoamento viscoso ao redor de uma esfera}
 
@@ -32,7 +32,7 @@ Podemos mudar as unidades utilizadas. Assim, se mudarmos a unidade de compriment
 \item $F \lra L \cdot F$
 \end{itemize}
 
-onde $L = 1000$ é o fator de conversão de $m$ para $mm$.
+onde $L = 1000$ é o fator de conversão de $m$ para $mm$. De outra maneira, $L$ é o fator pelo qual se deve reduzir um comprimento de $1\:m$ para se obter $1\:mm$.
 
 O mesmo processo pode ser feito com os outros parâmetros mas com uma complicação: os outros parâmetros possuem unidades compostas. A unidade de velocidade $U$ em SI é $m/s$, depende da unidade de comprimento e da unidade de tempo. Já a densidade depende da unidade de massa e da unidade de comprimento. Da mesma maneira, a unidade de força, assim como a unidade de viscosidade,  depende da unidade de massa, comprimento e tempo. Cada uma destas unidades básicas (comprimento, massa e tempo) podem ser variadas de maneira independente. Assim, se a unidade de comprimento for variada por um multiplicador $L$, a de massa por um multiplicador $M$ e o tempo por um multiplicador $T$, os valores numéricos dos parâmetros $U$, $D$, $\rho$, $\mu$ e $F$ variam da seguinte maneira:
 
@@ -44,7 +44,7 @@ O mesmo processo pode ser feito com os outros parâmetros mas com uma complicaç
 \item $F \lra (M \cdot L / T^2) \cdot F$
 \end{itemize}
 
-O que vamos fazer, é escolher um sistema de unidades específico para nosso problema. Este sistema de unidades será construído de modo que neste novo sistema, numericamente, $D = U = \rho = 1$.
+Os números entre parênteses ($L$ e $L/T$ por exemplo) é o que chamamos de dimensão de uma grandeza. O que vamos fazer, é escolher um sistema de unidades específico para nosso problema. Este sistema de unidades será construído de modo que neste novo sistema, numericamente, $D = U = \rho = 1$.
 
 Para o comprimento,
 \[
@@ -68,29 +68,30 @@ e
 \[
 \frac{M\cdot L}{T^2} \cdot F = \frac{F}{\rho D^2 U^2} = C_D
 \]
+Observe que estas grandezas $1/Re$ ou $C_D$ são, respectivamente o valor da viscosidade e o valor da força no sistema de unidades onde, \emph{numericamente},  $D = U = \rho$.
 
 Neste novo sistema de unidades, a relação original proposta para a força de arrasto, apresenta os seguintes valores numéricos:
 
 \[
 \frac{F}{\rho D^2 U^2} = F\left(1,1,1, \frac{1}{Re} \right)
 \]
-Neste novo sistema de unidades, \emph{que muda com o valor de cada parâmetro}, temos uma relação mais simples:
+Observe que este novo sistema de unidades, \emph{ muda com o valor de cada parâmetro}, temos uma relação mais simples:
 \[
 C_D = C_D(Re)
 \]
 mesmo resultado obtido a partir das equações de Navier-Stokes!
 
-O leitor distraído pode achar que isso é \emph{matemágica} mas justificativa é simples.A unidade SI para velocidade é $m/s$, esta relação é resultado de uma definição:
+O leitor distraído pode achar que isso é \emph{matemágica} mas a justificativa é simples.A unidade SI para velocidade é $m/s$, esta relação é resultado de uma definição:
 \[
-U = \frac{\Delta X}{\Delta t}
+U = \frac{dx}{dt}
 \]
-esta definição de velocidade determina uma que a velocidade é uma relação entre espaço e tempo. Já a unidade de força $N = kg\cdot m/s^2$ vem de uma lei física, a segunda lei de Newton:
+esta definição de velocidade quer dizer que a uma velocidade constante $U$, um comprimento $L$ é percorrido em um intervalo de tempo $T$. É interessante observar que muitas vezes estas definições básicas são utilizadas para se medir diretamente a grandeza mas outras grandezas podem ser mais convenientes. Quando um tubo de Pitot estático é usado para medir a velocidade de um fluido, a equação de Bernoulli é empregada. Esta equação é obtida a partir de manipulação e simplificações da equação de Navier-Stokes. Por outro lado, sistemas de medição como o PIV (\emph{Particle Image Velocimetry}) usam diretamente a definição acima para medir velocidade.
+
+A unidade de força $N = kg\cdot m/s^2$ também vem de uma lei física, a segunda lei de Newton:
 \[
 F = ma = m\frac{dv}{dt}
 \]
-e isso mostra que a força é uma relação entre variação de velocidade e tempo. A unidade de força é, então, resultado de uma lei física bem estabelecida. Mas o que é a equação de Navier-Stokes? Nada mais que a \emph{aplicação da segunda lei de Newton para um fluido contínuo}.
-
-O mesmo acontece com a viscosidade que é definida a partir da tensão de cisalhamento que ocorre quando existe um gradiente de velocidade:
+e isso mostra que a força é uma relação entre variação de velocidade e tempo. A unidade de força é, então, resultado de uma lei física bem estabelecida. Mas o que é a equação de Navier-Stokes? Nada mais que a \emph{aplicação da segunda lei de Newton para um fluido  Newtoniano} onde a relação entre tensão de cisalhamento e deformação é dada por uma relação linear (fluido Newtoniano). Para este tipo de fluido, a viscosidade é derivada desta relação linear. Um gradiente de velocidade resulta numa tensão de cisalhamento:
 \[
 \tau = \mu \frac{dU}{dy}
 \]
@@ -98,24 +99,43 @@ mas a tensão de cisalhamento nada mais é que uma força superficial dividida p
 \[
 \tau = \frac{F}{A} = \frac{F}{L^2}
 \]
-assim, o que fizemos aqui foi empregar os princípios usados para se obter as equações diferenciais do escoamento ao redor de uma esfera de maneira mais abstrata. Esta abordagem abstrata tem vantagens mas teríamos que postular que $F = F(U, D, \rho, \mu)$. Além disso em problemas mais complexos pode não ser tão evidente quais influências podem ser desprezadas, de modo que partir de uma equação conhecida é mais seguro e mais robusto que esta abordagem abstrata.
+O que temos é um conjunto de leis físicas e definições que amarram as grandezas básicas. Podemos partir das equações básicas como fizemos com as equações de Navier-Stokes ou de parâmetros gerais que descrevem o problema como foi mostrado aqui. Esta é uma abordagem abstrata, que implicitamente carrega as equações do problema. Quando falamos que $F = F(D, U, \rho, \mu)$ estamos implicitamente introduzindo as definições da cinemática, a segunda lei de Newton e a definição de fluido Newtoniano. Também estamos restringindo fluido a um fluido incompressível: como varia a densidade com a pressão? A ausência de qualquer parâmetro caracterizando isso implica em que o fluido é incompressível. Se o fluido for um fluido perfeito apareceriam outros parâmetros adimensionais: $M = U/c$ que é o número de Mach (razão entre uma velocidade e a velocidade do som no fluido - aí temos uma relação entre pressão e densidade!) e o coeficiente isoentrópico $\gamma$. Um fluido real introduziria novos parâmetros (seja pela equação de estado ou pelo fato de um fluido não ser Newtoniano). 
 
-Uma coisa deve ficar clara, na análise dimensional estamos usando nosso conhecimento prévio de um problema para se chegar numa simplificação. Não é possível criar uma ``nova física'' com análise dimensional!
+Assim, o que fizemos aqui foi empregar os princípios usados para se obter as equações diferenciais do escoamento ao redor de uma esfera de maneira mais abstrata. Esta abordagem abstrata tem vantagens - não precisamos nos preocupar com os detalhes de equações complexas,  mas teríamos que postular que $F = F(U, D, \rho, \mu)$. Caso a velocidade fosse alta, compressibilidade seria importante. Em líquidos cavitação pode ocorrer. E não podemos esquecer de imperfeições geométricas (rugosidade, esfericidade por exemplo). É fácil esquecer algum parâmetro relevante ou introduzir parâmetros a mais. 
+
+Uma coisa deve ficar clara, na análise dimensional estamos usando nosso conhecimento prévio de um problema para se chegar numa simplificação. Não é possível criar uma ``nova física'' com análise dimensional mas ela é a ferramenta mais simples para se simplificar e formular problemas.
 
 O famoso teorema dos $\Pi$s de Buckingham não são nada além de uma aplicação sistemática do que fizemos acima. Para se chegar a este resultado, iremos explorar mais o que é unidade, sistema de unidades e classe de unidades.
 
 
 
+\subsection{Dimensões e Unidades}
 
-
-
-\subsection{Unidades}
-
-Quando se fala que uma pessoa tem 1,82 m de altura, o que se quer dizer é que a altura desta pessoa é 1,82 vezes a altura de uma barra padrão armazenada no BIPM (Bureau International des Poids e Mesures) que se convencionou chamar de 1 m. Analogamente se esta mesma pessoa tem 90 kg de massa, isto quer dizer que a massa desta pessoa é 90 vezes a massa de um corpo armazenado no BIPM.
+Quando se fala que uma pessoa tem 1,82 m de altura, o que se quer dizer é que a altura desta pessoa é 1,82 vezes a altura de uma barra padrão armazenada no BIPM (Bureau International des Poids e Mesures) que se convencionou chamar de 1 m. Analogamente se esta mesma pessoa tem 90 kg de massa, isto quer dizer que a massa desta pessoa é 90 vezes a massa de um corpo armazenado no BIPM. Estas são grandezas fundamentais. 
 
 Existem outras medidas que são um pouco diferentes, velocidade por exemplo. Uma bicicleta tipicamente se locomove a 15 km/h. Se esta velocidade permanecer constante, a bicicleta se locomove 15 km durante um período de uma hora. Observe que esta unidade envolve duas outras: uma de espaço e outra de tempo. Esta é uma unidade derivada que é definida a partir de outras grandezas e a notação km/h é simplesmente uma convenção e não quer dizer que estamos dividindo km por h.
 
-\subsection{Sistemas de unidades}
+A dimensão de uma grandeza é a maneira que o valor numérico desta grandeza varia quando se muda o sistema de unidades. Se a unidade usada para esprimir uma grandeza $x$ seja substituída por uma unidade $X$ vezes menor, a dimenção desta grandeza será $X$. Se esta dimensão $X$ for dependente de outras dimensões temos uma dimensão derivada. Se port outro lado, $X\equiv 1$ a grandeza é conhecidade como uma \emph{grandeza adimensional}. Uma notação inicialmente proposta por Kelvin, é usada para se escrever a dimensão de uma grandeza. A dimensão da grandeza $x$ é $X$:
+
+\[
+  [x] = X
+\]
+Exemplos:
+\begin{itemize}
+\item Diâmetro da esfera $[D] = L$
+\item Velocidade do fluido $[U] = L/T$
+\item Densidade do fluido $[\rho] = M / L^3$
+\item Viscosidade do fluido $[\mu] = M / (L\cdot T)$
+\end{itemize}
+
+Usando as definições acima,
+\[
+  [Re] = \left[ \frac{\rho \cdot U \cdot D}{\mu} \right] = \frac{[\rho]\cdot[U]\cdot [D]}{[\mu]} = \frac{\frac{M}{L^3}\cdot\frac{L}{T}\cdot L}{\frac{M}{L\cdot T}} = 1
+  \]
+Ou seja, o número de Reynolds é adimensional, ou seja, se mudarmos a sistema de unidades, o valor do número de Reynolds não muda.
+  
+\subsection{Classes e Sistemas de Unidades}
+
 
 Em algumas situações, pode ser interessante representar uma grandeza, que é geralmente uma unidade derivada, como uma unidade básica. No caso da velocidade, se ela é definida como uma grandeza básica, o tempo pode ser definido a partir da velocidade e do comprimento. Parece absurdo? Lembre que no vácuo a velocidade da luz é uma constante absoluta e isto pode ser interessante.
 

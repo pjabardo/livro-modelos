@@ -32,9 +32,9 @@ Podemos mudar as unidades utilizadas. Assim, se mudarmos a unidade de compriment
 \item $F \lra L \cdot F$
 \end{itemize}
 
-onde $L = 1000$ é o fator de conversão de $m$ para $mm$. De outra maneira, $L$ é o fator pelo qual se deve reduzir um comprimento de $1\:m$ para se obter $1\:mm$.
+onde $L = 1000$ é o fator de conversão de $m$ para $mm$. De outra maneira de se enxergar isso é considerar $L$ como o fator pelo qual se deve reduzir um comprimento de $1\:m$ para se obter $1\:mm$.
 
-O mesmo processo pode ser feito com os outros parâmetros mas com uma complicação: os outros parâmetros possuem unidades compostas. A unidade de velocidade $U$ em SI é $m/s$, depende da unidade de comprimento e da unidade de tempo. Já a densidade depende da unidade de massa e da unidade de comprimento. Da mesma maneira, a unidade de força, assim como a unidade de viscosidade,  depende da unidade de massa, comprimento e tempo. Cada uma destas unidades básicas (comprimento, massa e tempo) podem ser variadas de maneira independente. Assim, se a unidade de comprimento for variada por um multiplicador $L$, a de massa por um multiplicador $M$ e o tempo por um multiplicador $T$, os valores numéricos dos parâmetros $U$, $D$, $\rho$, $\mu$ e $F$ variam da seguinte maneira:
+O mesmo processo pode ser feito com os outros parâmetros mas com uma complicação: os outros parâmetros possuem unidades compostas. A unidade de velocidade $U$ em SI é $m/s$, depende da unidade de comprimento e da unidade de tempo. A densidade depende da unidade de massa e da unidade de comprimento. Da mesma maneira, a unidade de força, assim como a unidade de viscosidade,  depende da unidade de massa, comprimento e tempo. Cada uma destas unidades básicas (comprimento, massa e tempo) podem ser variadas de maneira independente. Assim, se a unidade de comprimento for reduzida por um multiplicador $L$, a de massa por um multiplicador $M$ e o tempo por um multiplicador $T$, os valores numéricos dos parâmetros $U$, $D$, $\rho$, $\mu$ e $F$ variam da seguinte maneira:
 
 \begin{itemize}
 \item $D \lra (L) \cdot D$
@@ -44,7 +44,7 @@ O mesmo processo pode ser feito com os outros parâmetros mas com uma complicaç
 \item $F \lra (M \cdot L / T^2) \cdot F$
 \end{itemize}
 
-Os números entre parênteses ($L$ e $L/T$ por exemplo) é o que chamamos de dimensão de uma grandeza. O que vamos fazer, é escolher um sistema de unidades específico para nosso problema. Este sistema de unidades será construído de modo que neste novo sistema, numericamente, $D = U = \rho = 1$.
+Os números entre parênteses ($L$ e $L/T$ por exemplo) é conhecido na literatura de dimensão de uma grandeza. O que vamos fazer agora, é escolher um sistema de unidades específico e conveniente para nosso problema. Este sistema de unidades específico será construído de modo que neste novo sistema, \emph{numericamente}, $D = U = \rho = 1$.
 
 Para o comprimento,
 \[
@@ -83,9 +83,9 @@ mesmo resultado obtido a partir das equações de Navier-Stokes!
 
 O leitor distraído pode achar que isso é \emph{matemágica} mas a justificativa é simples.A unidade SI para velocidade é $m/s$, esta relação é resultado de uma definição:
 \[
-U = \frac{dx}{dt}
+U = \frac{L}{t}
 \]
-esta definição de velocidade quer dizer que a uma velocidade constante $U$, um comprimento $L$ é percorrido em um intervalo de tempo $T$. É interessante observar que muitas vezes estas definições básicas são utilizadas para se medir diretamente a grandeza mas outras grandezas podem ser mais convenientes. Quando um tubo de Pitot estático é usado para medir a velocidade de um fluido, a equação de Bernoulli é empregada. Esta equação é obtida a partir de manipulação e simplificações da equação de Navier-Stokes. Por outro lado, sistemas de medição como o PIV (\emph{Particle Image Velocimetry}) usam diretamente a definição acima para medir velocidade.
+esta definição de velocidade quer dizer que a uma velocidade constante $U$, um comprimento $L$ é percorrido em um intervalo de tempo $t$. É interessante observar que muitas vezes estas definições básicas são utilizadas para se medir diretamente a grandeza mas outras grandezas podem ser mais convenientes. Quando um tubo de Pitot estático é usado para medir a velocidade de um fluido, a equação de Bernoulli é empregada. Esta equação é obtida a partir de manipulação e simplificações da equação de Navier-Stokes. Por outro lado, sistemas de medição como o PIV (\emph{Particle Image Velocimetry}) usam diretamente a definição acima para medir velocidade.
 
 A unidade de força $N = kg\cdot m/s^2$ também vem de uma lei física, a segunda lei de Newton:
 \[
@@ -99,23 +99,23 @@ mas a tensão de cisalhamento nada mais é que uma força superficial dividida p
 \[
 \tau = \frac{F}{A} = \frac{F}{L^2}
 \]
-O que temos é um conjunto de leis físicas e definições que amarram as grandezas básicas. Podemos partir das equações básicas como fizemos com as equações de Navier-Stokes ou de parâmetros gerais que descrevem o problema como foi mostrado aqui. Esta é uma abordagem abstrata, que implicitamente carrega as equações do problema. Quando falamos que $F = F(D, U, \rho, \mu)$ estamos implicitamente introduzindo as definições da cinemática, a segunda lei de Newton e a definição de fluido Newtoniano. Também estamos restringindo fluido a um fluido incompressível: como varia a densidade com a pressão? A ausência de qualquer parâmetro caracterizando isso implica em que o fluido é incompressível. Se o fluido for um fluido perfeito apareceriam outros parâmetros adimensionais: $M = U/c$ que é o número de Mach (razão entre uma velocidade e a velocidade do som no fluido - aí temos uma relação entre pressão e densidade!) e o coeficiente isoentrópico $\gamma$. Um fluido real introduziria novos parâmetros (seja pela equação de estado ou pelo fato de um fluido não ser Newtoniano). 
+O que temos é um conjunto de leis físicas e definições que amarram as grandezas básicas. Podemos partir das equações básicas como fizemos com as equações de Navier-Stokes ou de parâmetros gerais que descrevem o problema como foi mostrado aqui. Esta é uma abordagem abstrata, que implicitamente carrega as equações do problema. Quando falamos que $F = F(D, U, \rho, \mu)$ estamos implicitamente introduzindo as definições da cinemática, a segunda lei de Newton e a definição de fluido Newtoniano. Também estamos restringindo fluido a um fluido incompressível: como varia a densidade com a pressão? A ausência de qualquer parâmetro caracterizando isso implica em que o fluido é incompressível. Se o fluido for um fluido perfeito apareceriam outros parâmetros adimensionais: $M = U/c$ que é o número de Mach (razão entre uma velocidade e a velocidade do som no fluido - aí temos uma relação entre pressão e densidade!) e o coeficiente isoentrópico $\gamma$. Um fluido real introduziria novos parâmetros (seja pela equação de estado ou pelo eventual fato do fluido não ser Newtoniano). 
 
-Assim, o que fizemos aqui foi empregar os princípios usados para se obter as equações diferenciais do escoamento ao redor de uma esfera de maneira mais abstrata. Esta abordagem abstrata tem vantagens - não precisamos nos preocupar com os detalhes de equações complexas,  mas teríamos que postular que $F = F(U, D, \rho, \mu)$. Caso a velocidade fosse alta, compressibilidade seria importante. Em líquidos cavitação pode ocorrer. E não podemos esquecer de imperfeições geométricas (rugosidade, esfericidade por exemplo). É fácil esquecer algum parâmetro relevante ou introduzir parâmetros a mais. 
+Assim, o que fizemos aqui foi empregar os princípios usados para se obter as equações diferenciais do escoamento ao redor de uma esfera de maneira mais abstrata. Esta abordagem abstrata tem vantagens - não precisamos nos preocupar com os detalhes de equações complexas,  mas teríamos que postular que $F = F(U, D, \rho, \mu)$. Caso a velocidade fosse alta, compressibilidade seria importante. Em líquidos cavitação pode ocorrer. E não podemos esquecer de imperfeições geométricas (rugosidade, esfericidade por exemplo) ou possíveis deformações da esfera. É fácil esquecer algum parâmetro relevante ou introduzir parâmetros a mais. 
 
-Uma coisa deve ficar clara, na análise dimensional estamos usando nosso conhecimento prévio de um problema para se chegar numa simplificação. Não é possível criar uma ``nova física'' com análise dimensional mas ela é a ferramenta mais simples para se simplificar e formular problemas.
+É importante ter uma coisa em mente. Na análise dimensional estamos usando nosso conhecimento prévio de um problema para se chegar numa simplificação. Não é possível criar uma ``nova física'' com análise dimensional mas ela é a ferramenta mais simples para se simplificar e formular problemas.
 
 O famoso teorema dos $\Pi$s de Buckingham não são nada além de uma aplicação sistemática do que fizemos acima. Para se chegar a este resultado, iremos explorar mais o que é unidade, sistema de unidades e classe de unidades.
 
 
 
-\subsection{Dimensões e Unidades}
+\subsection{Dimensões e Unidades e Grandezas Adimensionais}
 
-Quando se fala que uma pessoa tem 1,82 m de altura, o que se quer dizer é que a altura desta pessoa é 1,82 vezes a altura de uma barra padrão armazenada no BIPM (Bureau International des Poids e Mesures) que se convencionou chamar de 1 m. Analogamente se esta mesma pessoa tem 90 kg de massa, isto quer dizer que a massa desta pessoa é 90 vezes a massa de um corpo armazenado no BIPM. Estas são grandezas fundamentais. 
+Quando se fala que uma pessoa tem 1,82 m de altura, o que se quer dizer é que a altura desta pessoa é 1,82 vezes a altura de uma barra padrão armazenada no BIPM (Bureau International des Poids e Mesures) que se convencionou chamar de 1 m. Analogamente se esta mesma pessoa tem 90 kg de massa, isto quer dizer que a massa desta pessoa é 90 vezes a massa de um corpo armazenado no BIPM. Estas são \emph{unidades fundamentais}. 
 
-Existem outras medidas que são um pouco diferentes, velocidade por exemplo. Uma bicicleta tipicamente se locomove a 15 km/h. Se esta velocidade permanecer constante, a bicicleta se locomove 15 km durante um período de uma hora. Observe que esta unidade envolve duas outras: uma de espaço e outra de tempo. Esta é uma unidade derivada que é definida a partir de outras grandezas e a notação km/h é simplesmente uma convenção e não quer dizer que estamos dividindo km por h.
+Existem outras medidas que são um pouco diferentes, velocidade por exemplo. Uma bicicleta tipicamente se locomove a 15 km/h. Se esta velocidade permanecer constante, a bicicleta se locomove 15 km durante um período de uma hora. Observe que esta unidade envolve duas outras: uma de espaço e outra de tempo. Esta é uma \emph{unidade derivada} que é definida a partir de outras grandezas e a notação km/h é simplesmente uma convenção e não quer dizer que estamos dividindo km por h mas convenientemente está diretamente relacionada com a dimensão de uma grandeza.
 
-A dimensão de uma grandeza é a maneira que o valor numérico desta grandeza varia quando se muda o sistema de unidades. Se a unidade usada para esprimir uma grandeza $x$ seja substituída por uma unidade $X$ vezes menor, a dimenção desta grandeza será $X$. Se esta dimensão $X$ for dependente de outras dimensões temos uma dimensão derivada. Se port outro lado, $X\equiv 1$ a grandeza é conhecidade como uma \emph{grandeza adimensional}. Uma notação inicialmente proposta por Kelvin, é usada para se escrever a dimensão de uma grandeza. A dimensão da grandeza $x$ é $X$:
+A dimensão de uma grandeza é a maneira que o valor numérico desta grandeza varia quando se muda o sistema de unidades. Se a unidade usada para esprimir uma grandeza $x$ seja substituída por uma unidade $X$ vezes menor, a dimenção desta grandeza será $X$. Se esta dimensão $X$ for dependente de outras dimensões temos uma dimensão derivada. Se por outro lado, $X\equiv 1$ a grandeza é conhecidade como uma \emph{grandeza adimensional}. Uma notação inicialmente proposta por Maxwell \cite{Maxwell1871}, é usada para se escrever a dimensão de uma grandeza. A dimensão da grandeza $x$ é $X$:
 
 \[
   [x] = X
@@ -131,81 +131,74 @@ Exemplos:
 Usando as definições acima,
 \[
   [Re] = \left[ \frac{\rho \cdot U \cdot D}{\mu} \right] = \frac{[\rho]\cdot[U]\cdot [D]}{[\mu]} = \frac{\frac{M}{L^3}\cdot\frac{L}{T}\cdot L}{\frac{M}{L\cdot T}} = 1
-  \]
-Ou seja, o número de Reynolds é adimensional, ou seja, se mudarmos a sistema de unidades, o valor do número de Reynolds não muda.
+\]
+
+Ou seja, o número de Reynolds é adimensional, ou seja, se mudarmos a sistema de unidades, o valor do número de Reynolds não muda. Um parâmetro adimensional é um parâmetro que tem dimensão 1 e portanto não muda quando se muda o sistema de unidades.
+
+A notação usual para se exprimir unidades reflete naturalmente a dimensão de uma grandeza. Já mostramos que a dimensão de força é
+
+\[
+  [F] = [ma] = \frac{M\cdot L}{T^2}
+\]
+  
+O jeito usual de se representar uma unidade de uma grandeza está diretamente relacionada à dimensão. Na prática, sabemos a unidade e obtemos a dimensão diretamente substituindo a unidade pela dimensão correspondente. No caso da força:
+
+\[
+\frac{kg\cdot m}{s^2} \qrq \frac{M\cdot L}{T^2}
+\]
+    
   
 \subsection{Classes e Sistemas de Unidades}
 
-
-Em algumas situações, pode ser interessante representar uma grandeza, que é geralmente uma unidade derivada, como uma unidade básica. No caso da velocidade, se ela é definida como uma grandeza básica, o tempo pode ser definido a partir da velocidade e do comprimento. Parece absurdo? Lembre que no vácuo a velocidade da luz é uma constante absoluta e isto pode ser interessante.
-
-Um dado fenômeno físico envolve diferentes parâmetros, cada um com sua unidade. Um sistema de unidades é o conjunto de unidades independentes que permite descrever este fenômeno. Em problemas de cinemática, o metro e o segundo definem um sistema de unidades. Para problemas em mecânica é necessário uma outra unidade, em geral o kilograma. Neste caso temos o sistema de unidades (m,s,kg). Em algumas situações pode ser interessante substituir o kilograma por uma unidade de força, o kgf por exemplo.
-
-Se o fenômeno envolver calor, introduz-se uma nova unidade, o Kelvin (K) para a temperatura. A temperatura é um caso interessante pois, utilizando a teoria cinética da materia, poderia ser definida como uma unidade derivada. Mas este é um processo complicado e é mais conveniente definir-se uma unidade independente.
-
-Em se tratando de sistemas de unidades, a palavra chave é conveniência. O metro padrão ainda existe o no BIPM mas isto é apenas uma curiosidade histórica. Em situações específicas pode ser interessante usar uma grandeza que não parece fundamental ou nem mesmo constante como unidade básica. Um exemplo comum é utilizar a atração gravitacional da terra para definir força - é aí que surgem unidades como kilograma força e se gera confusão com unidades como a libra. Esta flexibilidade na definição dos sistemas de unidades é vista em detalhes \citeonline{Sedov59}.
-
-\subsection{Classe de um sistema de unidades}
-
-Qual a diferença entre usar um sistema de unidades como (m, s, kg) por outro como (milha, hora, tonelada)? O que se representa utilizando o primeiro sistema de unidades pode ser representado com tanta precisão pelo segundo sistema de unidades. Sistemas de unidades onde apenas as unidades das grandezas básicas variam formam uma classe de sistema de unidades. Ao se mudar as unidades de um sistema de unidades de uma dada classe, o que se estáfazendo é mudar o valor numérico de cada grandeza por um fator conhecido:
+As unidades utilizadas para se representar uma grandeza podem ser fundamentais ou derivadas. As unidades derivadas são obtidas a partir de princípios físicos bem estabelecidos como a unidade de força Newton que é definida a partir da segunda lei de Newton e está relacionada com a massa e aceleração:
 
 \[
-\begin{matrix}
-  1\:m = L\:km & 1\:s = T\:h & 1\:kg = M\:g\\
-  L=\frac{1}{1000} & T = \frac{1}{3600} & M = 1000\\
-\end{matrix}
+N \equiv kg \cdot\left(\frac{m}{s^2}\right)
 \]
-Esta classe de sistema de unidades é conhecido como LMT. A principal característica de uma classe de sistema de unidades é que não existe um sistema preferencial. Todos os sistemas de uma mesma classe são equivalentes.
 
-A dimensão de uma grandeza define como o valor numérico desta grandeza varia quando o sistema de unidades muda para outro da mesma classe. No caso de um comprimento, se a unidade muda de metro para kilômetro, o valor numérico do comprimento aumenta por um fator L que é sua dimensão. O mesmo vale para as outras unidades básicas e \emph{também para as unidade derivadas}. No sistema (m,s,kg), a unidade de força é denominada por N, onde
+Em mecânica, é usual definir três grandezas básicas para se representar qualquer tipo de fenômeno: $L$, $M$ e $T$. Caso outros fenômenos físicos estejam presentes, outras unidades podem ser necessárias. Se termodinâmica for importante, é conveniente adicionar a temperatura (dimensão $\Theta$). Quando eletricidade é importante, adicionamos a dimensão corrente $I$. O que é necessário vai depender dos fenômenos físicos envolvidos. Em geral utilizamos o sistema internacional de unidades \cite{BIPM19}  - SI que define de maneira precisa sete unidades básicas. Outras unidades são definidas a partir de princiíos físicos estabelecidos. Hoje em dia parece dogma quais as grandezas básicas. Em mecânica são comprimento, massa e tempo mas na realidade isto é arbitrário. Um exemplo pode ser visto no próprio SI: o metro é definido a partir da velocidade da luz no vácuo, fixada como $299 792 458 \: m\:s^{-1}$ e o segundo, definido por uma propriedade física da do átomo de Césio 133. Neste sentido, o comprimento seria uma unidade derivada! Hoje o SI é um sistema que independe de qualquer objeto físico e depende apenas de constantes físicas.
+
+Mas no dia a dia, o metro é simplesmente o que um régua mede, assim como o segundo é o que o cronômetro mede e o kilograma é o que uma balança mede. O conjunto de dimensões básicas usadas para representar as grandezas de um fenômeno é a classe do sistema de unidades. Em problemas envolvendo mecânica, em geral usamos a classe $LMT$ (L - comprimento, M - massa, T - tempo).
+
+Devido ao uso extensivo do sistema internacional, pode parecer que a class $LMT$ é a única possibilidade mas no fundo isso é arbitrário e deveríamos usar o que for mais conveniente. Em física de partículas é comum usar a energia no lugar da massa. Então neste caso estamos usando a classa $LET$. Em engenharia civil, quando se trata de de problemas estáticos, não há inércia e portanto a massa é importante apenas indiretamente na medida em que o peso depende da massa. Então porque não usar o peso como referência? A classe de unidades $LFT$ é muito comum! Lembre-se da confusão de unidades: kilograma-força ($kgf$) e libras. Uma libra é força ou massa? Para não haver ambiguidade, é comum ver coisas como $lbm$ (libra-massa) ou $lbf$ (libra-força). É confuso hoje mas se não existe massa, não existe muita ambiguidade (se considerarmos $g$, a aceleração da gravidade, constante).
+
+Voltando ao nosso velho problema do escoamento de um fluido viscoso ao redor de uma esfera, o que fizemos foi usar um sistema de unidades de classe $LU\rho$. Quando nós desenvolvemos as dimensões de cada grandeza do problema tivemos que transformá-las da classe $LMT$ para a classe $LU\rho$, apesar de termos feito isso de maneira implícita.
+
+Resumindo, a classe do sistema de unidades é arbitrária e podemos escolhê-la da maneira que for mais conveniente. Mas o número de unidades básicas independentes deve  ser sempre 3 em mecânica, certo? Nem tanto...
+
+Nos sistemas de classe $LMT$, a unidade de força é uma unidade derivada a partir da segunda lei de Newton. Mas existe um outro princípio básico que permite definir força: lei da gravitação universal. A unidade de força pode ser definida como a força entre duas massas iguais separadas por uma distância fixa. Se mantivermos como grandezas básicas independentes, o tempo e o espaçamento, então podemos definir força como
+
 \[
-1\:N = 1\:\frac{kg\cdot m}{s^2}
+F = \frac{m^2}{r^2}
 \]
-Se o sistema de unidades for mudado para km, h, ton: 
 
+Repare que não existe a constante da gravitação universal $G$! Se mantivermos a massa como grandeza básica independente, a segunda lei de Newton toma a seguinte forma:
 
-
-
-
-Para variar vamos começar com o problema do escoamento ao redor de uma esfera. Nós começamos analisando o problema a partir das equações de Navier-Stokes, admitindo que o escoemento é incompressível. Na análise que fizemos, a força de arrasto dependia dos seguintes parâmetros:
-\begin{itemize}
-\item $D$, diâmetro da esfera
-\item $U_0$, velocidade do escoamento ao longe
-\item $\rho$, massa específica do fluido
-\item $\mu$, viscosidade do fluido
-\end{itemize}
-
-Assim,
 \[
-F_a = F_a(D, U_0, \rho, \mu)
+F = \frac{ma}{g_c}
 \]
-na análise que fizemos usando as equações diferenciais, temos estes mesmos parâmetros. Por outro lado, com alguma experiência, poderíamos ter postulado essa relação. A palavra chave aqui é experiência.
 
-Até este ponto usamos unidades sem entrar a fundo no seu significado. A idéia da análise dimensional é que a lei acima independe do sistema de unidades utilizado. No sistema internacional, as grandezas acima usam as seguintes unidades:
+Qualquer um que tenha olhado um livro de mecânica que usa unidades imperiais reconhecerá esta fórmula. No sistema imperial, existem unidades de força independente da unidade de massa, comprimento e tempo. Mas neste caso é necessário introduzir uma constante para converter a unidade de força de $lbm\cdot ft \cdot s^{-2}$ para $lbf$. Esta conversão é feita pela constante $g_c$ na equação anterior.
 
-\begin{itemize}
-\item $D$, comprimento, $m$
-\item $U_0$, velocidade, $m/s$
-\item $\rho$, massa específica, $kg/m^3$
-\item $\mu$, viscosidade, $Pa\cdot s = N/m^2 \cdot s$
-\item $F_a$, força, $N$
-\end{itemize}
+No sistema SI, a unidade de força é derivada então $g_c = 1$. Mas no caso da gravitação universal entre duas massas iguais, uma constante de conversão é necessária:
 
-Falaremos mais sobre unidades adiante, mas neste momento, o que interessa é
- Agora vamos partir de um ponto de vista mais abstrato.
-Quando se analisou o pêndulo simples, 
-Esta equação pode ser reescrita como:
 \[
-\frac{L}{g}\frac{d^2\theta}{dt^2} + \sin\theta = 0 
+F = G \frac{m^2}{r^2}
 \]
-o que se fez foi modificar o tempo, introduzindo as escalas do problema de modo que o fator $L/g$ desaparece da equação. Uma outra maneira de enxergar isto é mudar o sistema de unidades utilizado para exprimir $L/g$ de modo que este parâmetro tenha valor numérico unitário a assim se obtém a equação diferencial adimensional. Considere um caso concreto com $L = 1\:m$ e $g = 10\: m/s^2$, $L/g=0.1\:s^2$. Se uma nova unidade de tempo $p$ for utilizada onde 
+
+esta constante $G$, conhecida como constante universal da gravidade e tem como unidade $N\cdot m^2 \cdot kg^{-2}$ que pode ser reescrita como
 \[
-1\:s = \sqrt{\frac{g}{L}}\:p
-\] 
-Esta mudança de unidades faz o truque. Esta nova unidade de tempo tem um aspecto novo: varia dependendo do comprimento do pêndulo e da aceleração da gravidade.
+N\cdot m^2 \cdot kg^{-2} \equiv \frac{N}{m^{-2}\cdot kg^2}
+\]
+onde fica clara conversão de unidades. O que foi mostrado acima pode ficar claro analisando a unidade de ângulo no SI. Esta unidade é chamada de radiano ($rad$). No SI ela é designada como uma unidade especial. O radiano é definido como a razão entre o arco e o raio, ou seja, a razão entre dois comprimentos. Isso deveria ser uma grandeza adimensional mas como é comum usar graus para se medir ângulos planos, é interessante dar um nome a essa grandeza. Neste sentido, as consantes $G$ e $g_c$ acima têm o mesmo papel que $180/\pi\: rad/^\circ$ para conversão de graus para radianos.
 
-A idéia básica por trás da análise dimensional é que um fenômeno físico não pode depender das unidades empregadas. Escolhendo um sistema de unidades de maneira inteligente permite simplificar um problema como se viu neste exemplo do pêndulo simples.
+Mas agora temos dois princípios físicos para se definir força. No sistema SI, a unidade de força é definida a partir da segunda lei de Newton e aparece a constante universal da gravidade. Como já escolhemos as unidades de comprimento e tempo como unidades básicas, a unidade de massa seria uma unidade derivada e \emph{seríam necessárias duas unidades básicas independentes} para representar problemas de mecânica. Aplicando outros princípios físicos isso poderia ser reduzido ainda mais. Poderíamos até chegar numa situação onde não existem unidades básicas fundamentais. Porque motivo isto não é feito? Conveniência, muitas medidas usuais seriam representadas por números muito pequenos ou grandes.
 
-Para avançar será necessário introduzir de maneira mais rigorosa os conceitos de unidade, sistemas de unidades e dimensões.
+\subsubsection{Classes de sistemas de unidades e o sistema SI}
+
+Mas na realidade, a maneira como o sistema internacional de unidades é hoje definido não existem objetos físicos que definem qualquer unidade básica. O SI é construído a partir de princípios físicos universais e bem conhecidos. Para que as medidas do dia a dia sejam convenientes, fatores multiplicativos são usados. Exemplo. O segundo é definido como $9 192 631 770$ vezes o tempo de transição do Césio 133. Este número enorme poderia ser igual a 1. Por outro lado, o metro é definido como a distância que a velocidade da luz no vácuo, que é uma constante pré-definida, durante 1 s. A unidade de comprimento poderia ser definida como a distância que a luz percorre no vácuo durante 1 transição do Césio 133 onde a velocidade da luz é definida numericamente como 1. As outras unidades básicas são definidas a partir de outras leis físicas mas os valores numéricos são fixados por conveniência, da mesma maneira que usamos graus no lugar de radianos em várias aplicações.
+
+A pergunta que surge agora é qual o papel da classe do sistema de unidades? O SI  foi construído de modo a ser conveniente tanto para uso no dia a dia quanto para a construção de um sistema de rastreabilidade metrológica. Mas estes são detalhes quando vamos resolver um problema de mecânica, ou qualquer outro. Neste caso a classe é escolhida da maneira mais conveniente de modo que os princípios físicos envolvidos sejam os mais simples possíveis. 
+
 
 \subsection{O teormea dos $\Pi$s de Buckinham}

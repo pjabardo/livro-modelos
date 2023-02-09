@@ -200,5 +200,115 @@ Mas na realidade, a maneira como o sistema internacional de unidades é hoje def
 
 A pergunta que surge agora é qual o papel da classe do sistema de unidades? O SI  foi construído de modo a ser conveniente tanto para uso no dia a dia quanto para a construção de um sistema de rastreabilidade metrológica. Mas estes são detalhes quando vamos resolver um problema de mecânica, ou qualquer outro. Neste caso a classe é escolhida da maneira mais conveniente de modo que os princípios físicos envolvidos sejam os mais simples possíveis. 
 
+\subsection{A dimensão de uma grandeza é sempre um monômio}
 
+Aceitamos desde cedo que não se pode somar metros com segundos. Será que isso é sempre verdade. O que queremos dizer na verdade é as dimensões de uma grandeza são sempre monômios como no caso de uma força:
+
+\[
+  [F] = \frac{M\cdot L}{T^2}
+\]
+
+Será qie poderia existir dimensões do tipo
+\[
+\frac{L^2}{T} + \frac{M\cdot T^2}{L^3}
+\]
+
+O problema na equação acima é a soma. Na realidade é possível em algumas situações usar unidades que envolvam soma. \cite{Barenblatt96} cita um exemplo: o tempo, em minutos, que se leva para ir de um ponto a outro em Moscou é a soma da distância em $km$ com o número de faróis. Ficaria surpreso que isso fosse verdade na Moscou de hoje mas no final da União Soviética com um número muito inferior de carros talvez fosse verdade. Em São Paulo isso pode ter sido verdade no auge da pandemia de COVID-19 em 2020.
+
+De cara pode-se ver um problema com esta relação: se mudar as unidades, já era. O que esta relação empírica aproximada está fazendo na verdade é uma equação do tipo:
+
+\[
+T = c_1 \cdot L + c_2 \cdot N
+\]
+
+onde $c_1$ e $c_2$ são coeficientes com as seguintes dimensões:
+
+\begin{itemize}
+\item $[c_1] = \frac{T}{L}$
+\item $[c_2] = T$
+\end{itemize}
+
+Acontece que numa cidade com avenidas largas e pouco trânsito, uma velocidade típica seria $60\:km/h$ ou seja $1\:km/min$. E um farol que demora um pouco menos de $1\:min$ é bem comum. Assim a relação original está adotando os coeficientes $c_1 = 1 \:km/min$ e $c\_2 = 1\: min$. No entanto esta equação é rudimentar e restrita demais e se for usada, será apenas em um contexto mais informal e a formulação original é mais fácil de ser lembrada.
+
+A demonstração que faremos aqui foi retirada de \cite{Barenblatt96}. A idéia por trás de toda a análise dimensional é que os fenômenos físicos não devem depender do sistema de unidades. Um outro jeito de enxergar isso é dizer que \emph{não existe um sistema de unidades preferencial}. Com essa hipótese pode-se demonstrar que a dimensão de uma grandeza é sempre um monômio. Seja uma grandeza $a$, sua dimensão vale
+
+\[
+[a] = \phi\left( L, M, T, \ldots\right)
+\]
+
+Se mudarmos o sistema de unidades para o sistema 1, o valor de $a$ no sistema 1 terá o seguinte valor
+
+\[
+a_1 = a\cdot\phi\left(L_1, M_1, T_1, \ldots\right)
+\]
+
+já num sistema 1, temos:
+
+\[
+a_2 = a\cdot\phi\left(L_2, M_2, T_2, \ldots\right)
+\]
+
+Dividindo um pelo outro,
+
+\[
+\frac{a_2}{a_1} = \frac{ \phi\left(L_2, M_2, T_2, \ldots\right) }{ \phi\left(L_1, M_1, T_1, \ldots\right) }
+\]
+
+Lembrando que estamos admitindo que todos os sistemas de unidade de uma determinada classe são equivalentes, então podemos considerar o sistema 1 como o sistema original:
+
+\[
+a_2 = a_1\phi\left(\frac{L_2}{L_1}, \frac{M_2}{M_1}, \frac{T_2}{T_1}, \ldots \right)
+\]
+
+assim temos
+
+
+\[
+\frac{ \phi\left(L_2, M_2, T_2, \ldots\right) }{ \phi\left(L_1, M_1, T_1, \ldots\right) } = \phi\left(\frac{L_2}{L_1}, \frac{M_2}{M_1}, \frac{T_2}{T_1}, \ldots \right)
+\]
+
+Derivando a equação acima em relação a $L_2$ e fazendo $L_2 = L_1 = L$, temos
+
+\[
+\frac{\partial\phi}{\partial L}(L,M,T) \cdot \frac{1}{\phi(L,M,T,\ldots)} = \frac{1}{L}\frac{\phi}{L}(1,1,1,\ldots) = \frac{\alpha}{L}
+\]
+onde $\frac{\phi}{L}(1,1,1,\ldots) = \alpha$. Esta equação pode ser integrada chegando à seguinte expressão:
+
+\[
+\phi(L,M,T,\ldots) = C_1(M,T,\ldots) L^\alpha
+\]
+
+Substituindo na equaçao anterior, temos
+
+\[
+\frac{ \phi\left(L_2, M_2, T_2, \ldots\right) }{ \phi\left(L_1, M_1, T_1, \ldots\right) } = \phi\left(\frac{L_2}{L_1}, \frac{M_2}{M_1}, \frac{T_2}{T_1}, \ldots \right) =
+\frac{ C_1\left(M_2, T_2, \ldots\right) }{ C_1\left(M_1, T_1, \ldots\right) } = C_1\left(\frac{M_2}{M_1}, \frac{T_2}{T_1}, \ldots \right)
+\]
+
+Agora repetimos o processo derivando em relação a $M_2$. Com isso chegamos a
+\[
+C_1 = M^\beta C_2(T, \ldots)
+\]
+
+o processo pode ser repetido para todas as dimensões independentes da classe e chegamos na seguinte expressão
+
+\[
+\phi(L,M,T,\ldots) = C_N\cdot L^\alpha\cdot M^\beta \cdot T^\gamma\cdot\ldots
+\]
+Como $\phi(1,1,1,\ldots) = 1$, então $C_N = 1$ demonstrando que as funções dimensionais têm sempre a forma
+
+\[
+\phi = L^\alpha M^\beta T^\gamma \ldots
+\]
+
+
+
+\subsection{Grandezas com dimensões independentes}
+
+Tendo estabelecido uma classe de unidades, as grandezas que caracterizam o problema são $X_1$, $X_2$, \ldots, $X_N$.
+
+
+
+  
+  
 \subsection{O teormea dos $\Pi$s de Buckinham}

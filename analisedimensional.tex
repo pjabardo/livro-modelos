@@ -192,7 +192,7 @@ N\cdot m^2 \cdot kg^{-2} \equiv \frac{N}{m^{-2}\cdot kg^2}
 \]
 onde fica clara conversão de unidades. O que foi mostrado acima pode ficar claro analisando a unidade de ângulo no SI. Esta unidade é chamada de radiano ($rad$). No SI ela é designada como uma unidade especial. O radiano é definido como a razão entre o arco e o raio, ou seja, a razão entre dois comprimentos. Isso deveria ser uma grandeza adimensional mas como é comum usar graus para se medir ângulos planos, é interessante dar um nome a essa grandeza. Neste sentido, as consantes $G$ e $g_c$ acima têm o mesmo papel que $180/\pi\: rad/^\circ$ para conversão de graus para radianos.
 
-Mas agora temos dois princípios físicos para se definir força. No sistema SI, a unidade de força é definida a partir da segunda lei de Newton e aparece a constante universal da gravidade. Como já escolhemos as unidades de comprimento e tempo como unidades básicas, a unidade de massa seria uma unidade derivada e \emph{seríam necessárias duas unidades básicas independentes} para representar problemas de mecânica. Aplicando outros princípios físicos isso poderia ser reduzido ainda mais. Poderíamos até chegar numa situação onde não existem unidades básicas fundamentais. Porque motivo isto não é feito? Conveniência, muitas medidas usuais seriam representadas por números muito pequenos ou grandes.
+Mas agora temos dois princípios físicos para se definir força. No sistema SI, a unidade de força é definida a partir da segunda lei de Newton e aparece a constante universal da gravidade. Como já escolhemos as unidades de comprimento e tempo como unidades básicas, a unidade de massa seria uma unidade derivada e \emph{seríam necessárias duas unidades básicas independentes} para representar problemas de mecânica. Aplicando outros princípios físicos isso poderia ser reduzido ainda mais. Poderíamos até chegar numa situação onde não existem unidades básicas fundamentais. Porque motivo isto não é feito? Conveniência, muitas medidas usuais seriam representadas por números muito pequenos ou grandes. Mas além disso, o que ganharíamos com isso se o nosso problema não envolve a gravitação universal. Para a maior parte dos problemas do dia a dia, a gravidade pode ser representada por uma única constante, a aceleração da gravidade. A gravitação universal só aparece indiretamente. O importante a ser lembrado é que ainda teremos uma unidade de massa, comprimento e tempo. 
 
 \subsubsection{Classes de sistemas de unidades e o sistema SI}
 
@@ -362,3 +362,76 @@ Dados um problema caracterizado por $N$ parâmetros, o número de parâmetros in
   
   
 \subsection{O teormea dos $\Pi$s de Buckinham}
+
+Finalmente chegamos ao resultado esperado: o teorema dos $\Pi$s de Buckingham.
+%%% Um pouco de história
+
+Independente da abordagem empregada qualquer problema será na forma
+
+\[
+a = f\left(a_1, a_2, \ldots, a_K, b_1, b_2, \ldots, l_N\right)
+\]
+
+Nesta relação $a_1$, \ldots, $a_K$ são grandezas com dimensões independentes e $b_1, \ldots, b_N$ são grandezas com dimensões dependentes, assim, pode-se escrever
+
+\[
+\begin{aligned}
+  \left[a\right]  &= [a_1]^{\alpha}[a_2]^{\beta} \cdots [a_K]^{\gamma}\\
+  \left[b_1\right] &= [a_1]^{\alpha_1}[a_2]^{\beta_1} \cdots [a_K]^{\gamma_1}\\
+  \left[b_2\right] &= [a_1]^{\alpha_2}[a_2]^{\beta_2} \cdots [a_K]^{\gamma_2}\\
+  \cdots &\\
+  \left[b_N\right] &= [a_1]^{\alpha_N}[a_2]^{\beta_N} \cdots [a_K]^{\gamma_N}\\
+\end{aligned}
+\]
+
+Observe que após calcularmos as grandezas $\alpha$, $\beta$, \ldots, $\gamma$, $\alpha_1$, $\beta_1$, \ldots, $\gamma_1$ , \ldots $\alpha_N$, $\beta_N$, \ldots, $\gamma_N$,
+as grandezas
+
+\[
+\Pi = \frac{a}{a_1^\alpha a_2^\beta\cdots a_K^\gamma}, \quad
+\Pi_1 = \frac{b_1}{a_1^{\alpha_1} a_2^{\beta_1}\cdots a_K^{\gamma_1}},\quad
+\Pi_2 = \frac{b_2}{a_1^{\alpha_2} a_2^{\beta_2}\cdots a_K^{\gamma_2}},\quad
+\cdots
+\Pi_N = \frac{b_N}{a_1^{\alpha_N} a_2^{\beta_N}\cdots a_K^{\gamma_N}}
+\]
+
+\emph{têm dimensão 1} ou seja, são grandezas adimensionais. Assim, a equação original pode ser escrita como
+
+\[
+\Pi \cdot \left({a_1^\alpha a_2^\beta\cdots a_K^\gamma}\right) =
+f\left( a_1, a_2, \ldots, a_K,
+\Pi_1 \cdot a_1^{\alpha_1} a_2^{\beta_1}\cdots a_K^{\gamma_1}, 
+\Pi_2 \cdot a_1^{\alpha_2} a_2^{\beta_2}\cdots a_K^{\gamma_2}, 
+\ldots,
+\Pi_N \cdot a_1^{\alpha_N} a_2^{\beta_N}\cdots a_K^{\gamma_N}
+\right)
+\]
+
+ou seja
+
+\[
+\Pi = \mathcal{F}\left(a_1, a_2, \ldots, a_K, \Pi_1, \Pi_2, \ldots, \Pi_N \right)
+\]
+
+lembrando que todos os sistemas de unidades são equivalentes, é possível escolher um sistema onde, \emph{numericalmente}, $a_1 = a_2 = \cdots = a_K$. Mas $\Pi$, $\Pi_1$, \ldots, $\Pi_N$ são grandezas adimensionais. Assim, neste novo sistema de unidades, 
+
+\[
+\Pi = \mathcal{F}\left(1, 1, \ldots, 1, \Pi_1, \Pi_2, \ldots, \Pi_N \right)
+\]
+
+ou seja
+
+\[
+\Pi = \Pi\left(\Pi_1, \Pi_2, \ldots, \Pi_N \right)
+\]
+
+O resultado que obtivemos aqui quer dizer que a relação entre uma grandeza dimensional e vários parâmetros dimensionais pode ser reescrita como a relação entre uma grandeza dimensional e alguns parâmetros adimensionais onde o número destas grandezas adimensionais é a diferença entre o número de parâmetros original e o número de de parâmetros independentes.
+
+No nosso velho exemplo, tínhamos a grandeza $F$ dimensional que dependia de $U$, $D$, $\rho$ e $\mu$ e transformamos isso na relação
+
+\[
+F = F(U, D, \rho, \mu) \qrq \Pi = \Pi(\Pi_1) \qquad \Pi_1 = \frac{\mu}{\rho U D}, \quad \Pi = \frac{F}{\rho D^2 U^2}
+\]
+
+
+

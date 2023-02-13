@@ -1,0 +1,139 @@
+\section{Semelhança e modelos em escala reduzida}
+
+Até este ponto, consideramos algumas abordagens para se analisar as escalas de um problema. Quando partimos das equações diferenciais do problema, a semelhança ficou clara. A partir da adimensionalização das equações diferenciais e condições de contorno, chega-se a uma família de resultados que dependem de parâmetros adimensionais. Assim, dois casos diferentes são semelhantes se
+
+\begin{itemize}
+\item O modelo for representativo nos dois casos
+\item Os adimensionais que caracterizam o problema são iguais nos dois casos
+\end{itemize}
+
+É importante ressaltar o primeiro ponto acima. Voltando ao problema do escoamento ao redor de uma esfera, partimos da seguinte relação funcional
+
+\[
+F = F(U, D, \rho, \mu)
+\]
+
+e chegamos à seguinte equação adimensional
+
+\[
+C_D = C_D(Re)
+\]
+
+Obtivemos estas relações usando análise dimensional e, também, a partir das equações de Navier-Stokes. Enquanto o modelo de escoamento incompressível de um fluido Newtoniano for representativo, a relação é válida. Não interessa a natureza exata do fluido, se ele for Newtoniano e incompressível e obedece o princípio da aderência completa, dois casos são semelhantes se
+
+\[
+Re_1 = Re_2
+\]
+
+Não interessa se o fluido é água, ar ou mercúrio, enquanto o o modelo for representativo, os fenômenos são semelhantes. Caso a velocidade seja alta, compressibilidade ou cavitação podem invalidar o problema. A viscosidade pode depender da temperatura, o que pode atrapalhar um pouco. Outro problema é a geometria. Consideramos apenas o diâmetro da esfera. Mas nehuma esfera é perfeita, pode haver distorções e rugosidade é extremamante importante em algumas situações. A distribuição de tensões na superfície pode causar deformações e o modelo pode deixar de ser válido.
+
+A validade do modelo é o que vai determinar a semelhança e no final das contas, apenas a experiência (preferencialmente experimental mas também numérica) vai determinar a validade do modelo. Ao se repetir o experimento com diferentes fluidos, dimensões e velocidades, a própria relação funcional $C_D = C_D(Re)$ pode ajudar a verificar a validade do modelo: as diversas medições colapsarem na mesma curva é um forte indício de que há semelhança. No entanto, a incerteza experimental (ou numérica) pode confindir as coisas.
+
+\subsection{Modelos em escala reduzida}
+
+Uma das principais aplicações da análise dimensional e semelhança é o estudo experimental de algum fenômeno em escala reduzida. 
+
+Após a análise dimensional, o problema original é reduzido a uma relação de parâmetros adimensionais:
+
+\[
+\Pi = \Pi\left(\Pi_1, \Pi_2, \ldots, \Pi_N \right)
+\]
+
+Para que o fenômeno seja semelhante tanto no modelo ($m$) quanto no protótipo ($p$), é necessário que
+
+\[
+\Pi_{1,m} = \Pi_{1,p}, \quad \Pi_{2,m} = \Pi_{2,p}, \quad \cdots \quad \Pi_{N,m} = \Pi_{N,p}
+\]
+
+Se isto for observado, a semelhança é completa. Isto fica bem claro quando se adimensionalizam as equações diferenciais. No problema do escoamento ao redor da esfera isso é equivalente a
+
+\[
+Re_m = Re_p \qrq \frac{\rho_m D_m U_m}{\mu_m} = \frac{\rho_p D_p U_p}{\mu_p}
+\]
+
+Em termos de escala,
+
+\[
+\lambda_\rho \cdot \lambda_D \cdot \lambda_U = \lambda_\mu
+\]
+
+
+onde a seguinte notação para escala foi adotada:
+
+\[
+\lambda_X = \frac{X_m}{X_p}
+\]
+(a escala de $X$ é a razão entre $X$ no modelo e $X$ no protótipo.
+
+\subsection{Semelhança incompleta}
+Conceitualmente o problema da semelhança está completo. Na prática isso pode não ajudar tanto. Consideremos o vento em um edifício de altura $L$. Em um ensaio em túnel de vento, o fluido é o mesmo e portanto
+
+\[
+\lambda_\rho = \lambda_\mu = 1
+\]
+
+(não exatamente, vairações de temperatura e pressão atmosférica podem influir mas estes efeitos são pequenos).
+
+Com isso,
+
+\[
+\lambda_U = \frac{1}{\lambda_L}
+\]
+
+Mesmo em um túnel de vento com grandes dimensões, $\lambda_L = 1:100$, ou seja, $\lambda_U = 100:1$. Por outro lado, é comum que a velocidade extrema do vento seja superior a 40 $m/s$. Para se manter a semelhança, seria necessária uma velocidade de 4000 $m/s$ o que é absurdo! Estamos falando de escoamentos hipersônicos - o modelo quebra completamente. Mesmo com uma escala dimensional de $1:100$, o escoamento é supersônico ou na melhor das hipóteses transônico. A semelhaça completa só é possível com um modelo em escala real. Na prática isso inviabiliza qualquer tipo de ensaio. 
+
+Mas nem tudo está perdido! É comum que
+
+\[
+\lim_{\Pi_i\rightarrow\infty} \Pi\left(\Pi_1, \ldots, \Pi_i, \Pi_{i+1}, \ldots, \Pi_N\right) = \Pi'\left(\Pi_1, \ldots, \Pi_{i-1}, \Pi_{i+1}, \ldots, \Pi_N\right) \ne 0
+\]
+
+ou seja, se $\Pi_i$ for grande o suficiente, $\Pi$ independe de $\Pi_i$! Aqui temos semelhança incompleta. A mesma situação se repete quando $\Pi_i \longrightarrow 0$. Neste caso, o adimensional $1/\Pi_i \longrightarrow \infty$ e voltamos ao primeiro caso.
+
+Pode parecer um mero detalhe mas a condição $\Pi' \ne 0$ é importante. Caso contrário a influência de $\Pi_i$ pode sempre ser sentida. \citeonline{Barenblatt96} entra em maiores detalhes neste tipo de problema. Adiante veremos um exemplo com esta situação.
+
+Manuais e normas de aerodinâmica tabelam valores de coeficiente de arrasto para diferentes geometrias. Em muitos casos, o que se tem é um valor de $C_D$ para cada geometria como pode-se ver em na seção 6.3 da norma NBR 6123\cite{nbr6123}. Geralmente estes casos correspondem a corpos rombudos com pontos de separação fixos. Corpos aerodinâmicos apresentam curvas de $C_D \times Re$ como mostra o clássico \citeonline{Abbott59}.
+
+
+\subsection{Incompatibilidade entre adimensionais}
+Veremos nos exemplos que alguns problemas com escoamento em campo gravitacional, um outro adimensional é importante:
+
+\[
+Fr = \frac{U}{\sqrt{gL}}
+\]
+o número de Froude. Ao se analisar o escoamento em navios, além do número de Reynolds, o efeito das ondas é importante e o número de Froude é o outro adimensional que precisa ser modelado. A semelhança (completa) neste caso requer
+
+\[
+Re_m = Re_p \qquad Fr_m = Fr_p
+\]
+
+Para o número de Reynolds já estabelecemos a escala de velocidade $\lambda_U = 1/\lambda_L$. Mas para se obter a semelhança do número de Froude,
+
+\[
+\lambda_U = \sqrt{\lambda_L}
+\]
+
+Neste caso, a semelhança completa não é uma mera inconveniência onde túneis de vento (ou canais de água) enormes são necessários. Se existir semelhança no número de Reynolds, não haverá semelhança no número de Froude. Mas este caso á ainda pior: quanto mais se acerta Reynolds, pior se modela Froude. A única possibilidade de estudo é em um modelo com escala geométrica 1!
+
+A outra possibilidade é estudar os diferentes efeitos de maneira separada. Um experimento reproduzindo o número de Froude em um canal de água e um outro ensaio com número de Reynolds alto (as dificuldades com Re continuam) em túnel de vento.
+
+  
+\subsection{Abordagem geral}
+
+Ao se analisar um problema, a abordagem geral para atacar o problema deve ser algo parecido com o procedimento a seguir:
+
+\begin{enumerate}
+\item Determinar os fenômenos físicos relevantes
+\item Estabelecer os parâmetros que caracterizam o fenômeno
+\item Usando análise dimensional ou as equações diferenciais, chegar nos adimensionais relevantes
+\item Usando experiência prévia, estimar o comportamento do problema quando alguns dos adimensionais tendem a infinito (ou zero)
+\item Caso a grandeza em estudo tenda a uma constante (dependendente dos outros adimensioanais, naturalmente), tentar resolver este problema simplificado
+\item Se a grandeza em estudo tender a zero (ou infinito), alguma abordagem mais sofisticada pode-se empregada \cite{Barenblatt96}.
+\item Se nenhum comportamento simples for observado (ou esperado), não vai ter jeito. Trabalho duro te espera...
+\item Se houve simplificação, este resultado simplificado pode ser usado como base para análises mais sofisticadas e precisas.
+\end{enumerate}
+
+Na análise dimensional, introduzir parâmetros não dificulta muito o problema então pode-se ser conservador e na dúvida adicionar parâmetros. Por outro lado, na solução do problema, seja por métodos analíticos, numéricos ou experimentais, qualquer adimensional a mais é um trabalho considerável e pode até inviabilizar o estudo. Neste caso, reduzir o número de parâmetros é essencial.
+
+
+

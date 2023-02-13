@@ -200,6 +200,11 @@ Mas na realidade, a maneira como o sistema internacional de unidades é hoje def
 
 A pergunta que surge agora é qual o papel da classe do sistema de unidades? O SI  foi construído de modo a ser conveniente tanto para uso no dia a dia quanto para a construção de um sistema de rastreabilidade metrológica. Mas estes são detalhes quando vamos resolver um problema de mecânica, ou qualquer outro. Neste caso a classe é escolhida da maneira mais conveniente de modo que os princípios físicos envolvidos sejam os mais simples possíveis. 
 
+
+
+
+
+
 \subsection{A dimensão de uma grandeza é sempre um monômio}
 
 Aceitamos desde cedo que não se pode somar metros com segundos. Será que isso é sempre verdade. O que queremos dizer na verdade é as dimensões de uma grandeza são sempre monômios como no caso de uma força:
@@ -303,9 +308,54 @@ Como $\phi(1,1,1,\ldots) = 1$, então $C_N = 1$ demonstrando que as funções di
 
 
 
-\subsection{Grandezas com dimensões independentes}
+\subsection{Grandezas independentes a dependentes}
 
-Tendo estabelecido uma classe de unidades, as grandezas que caracterizam o problema são $X_1$, $X_2$, \ldots, $X_N$.
+Escolhida a classe de sistemas de unidades, queremos escrever as as dimensões dos parâmetros relevantes para o nosso problema nesta classe. Assim, no problema do escoamento ao redor da esfera, estamos escolhendo a class $LMT$. Os parâmetros deste problema são $U$, $D$, $\rho$ e $\mu$ e $F$  (estamos tratando a força como mais um parâmetro).
+
+Nesta classe,
+
+\begin{itemize}
+\item $[U] = L/T = L^1\cdot M^0 \cdot T^{-1}$
+\item $[D] = L = L^1 \cdot M^0\cdot T^0$
+\item $[\rho] = M/L^3 = L^{-3}\cdot M^1\cdot T^0$
+\item $[\mu] = M/(LT) = L^{-1}\cdot M^1\cdot T^{-1}$
+\item $[F] = ML/T^2$
+\end{itemize}
+
+Temos 5 parâmetros e 3 dimensões na classe ($L$, $M$ e $T$) e cada parâmetro tem uma dimensão na forma $L^\alpha M^\beta T^\gamma$. Dois parâmetros têm dimensões independentes caso a dimensão de um parâmetro não possa ser escrita em função da dimensão do outro parâmetro. Assim, a única solução para a equação $[U]^\alpha [D]^\alpha = 1$ é $\alpha = \beta = 0$, a solução trivial.
+
+Em geral, $N$ parâmetros $X_1$, $X_2$, \ldots, $X_N$ são independentes caso a única solução da equação
+
+\[
+X_1^{\alpha_1} \cdot X_2^{\alpha_2} \ldots X_N^{\alpha_N} = 1
+\]
+
+seja a solução trivial $\alpha_1 = \alpha_2 = \cdots = \alpha_N$.
+
+Voltemos ao nosso velho problema do escoamento ao redor da esfera, e verifiquemos se os parâmetros $U$, $D$ e $\rho$ são dependentes ou independentes:
+
+\[
+  [U]^a \cdot [D]^b \cdot [\rho]^c = (L^a \cdot T^{-a}) \cdot (L^b) \cdot (L^{-3c}M^c) =
+  L^{a+b-3c}\cdot M^c \cdot T^{-a + c} = 1
+\]
+
+com isso, chegamos ao seguinte sistema de equações
+\[
+\begin{aligned}
+  a &+ b &- 3c &= 0 \\
+  & & c & = 0 \\
+  -a & &+c & = 0\\
+\end{aligned}
+\]
+
+cuja única solução é $a=b=c=0$. Portanto, $U$, $D$ e $\rho$ têm dimensões independentes. Se adicionarmos $\mu$ a este conjunto, as dimensões são dependentes pois
+
+\[
+  [U] \cdot [D] \cdot [\rho] \cdot [\mu]^{-1} = 1
+\]
+
+Dados um problema caracterizado por $N$ parâmetros, o número de parâmetros independentes do maior subconjunto de parâmetros que são independentes. No caso do problema do escoamento ao redor da esfera, o número de grandezas com dimensões independentes é 3.
+
 
 
 

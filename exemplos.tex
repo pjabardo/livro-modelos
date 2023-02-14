@@ -1,1 +1,96 @@
 \section{Exemplos}
+
+\subsection{Pêndulo simples}
+
+O nosso primeiro exemplo de equação diferencial foi o pêndulo simples. Vamos tentar usar a análise dimensional. O objetivo é tentar determinar o ângulo instantâneo $\theta(t)$ e a reação do pêndulo $N$.
+
+\[
+\theta = \theta(t, \theta_0, l, g, m) \qquad N = N(t, \theta_0, l, g, m)
+\]
+
+onde $m$ é a massa do pêndulo, $l$ o seu comprimento, $g$ é a aceleração da gravidade, e $\theta_0$ é o ângulo inicial do pêndulo que é adimensional. Vamos usar um sistema de unidades de class $LMT$. Os diferentes parâmetros têm dimensão:
+
+\begin{itemize}
+\item $[t] = T$
+\item $[\theta_0] = 1$
+\item $[l] = L$
+\item $[g] = L/T^2$
+\item $[m] = M$
+\end{itemize}
+Já as grandezas que desejamos determinar têm dimensão
+\begin{itemize}
+\item $[\theta] = 1$
+\item $[N] = ML/T^2$
+\end{itemize}
+
+Com os parâmetros, temos apenas os seguintes adimensionais:
+\begin{itemize}
+\item $\Pi_1 = t\sqrt{g/l}$
+\item $\Pi_2 = \theta_0$
+\end{itemize}
+
+Já as grandezas que queremos determinar apresentam os seguintes adimensionais
+\[
+\begin{aligned}
+  \theta &= \theta\left(\theta_0, t\sqrt{ \frac{g}{l} }\right) \\
+  \frac{N}{mg} &= f\left(\theta_0, t\sqrt{ \frac{g}{l} }\right) \\
+\end{aligned}
+\]
+
+Porque a massa não está do lado direito? Temos 5 parâmetros, sendo que 3 têm dimensões independentes. Um adimensional é o prórpio ângulo inicial $\theta_0$ é o outro é $\Pi_1 = t\sqrt{g/l}$. Pensando fisicamente, isso é natural: a única força externa é o peso que é proporcional à massa mas a aceleração também é proporcional à massa e assim se cancelam. Mas a massa aparece no cálculo da reação $N$. Porque $N$ não foi colocado no lado direito da equação? A reação $N$ não pode ser especificada ou controlada. Ela é resultado da dinâmica do problema, ela é consequência e não causa: existe diferença entre o lado direito e o lado esquerdo da equação.
+
+E o período de oscilação. Neste caso, $t$ pode ser retirado do lado direiro (não é mais um parâmetro) e assom do lado direito só existe o adimensional $\theta_0$. Então temos
+
+\[
+T\sqrt{\frac{g}{l}} = f_2(\theta_0)
+\]
+
+Será que conseguimos fazer algo a mais com isso? Vejamos o que acontece no limite $\theta_0\longrightarrow 0$. Neste caso existe a solução linear e sabemos que
+
+\[
+\lim_{\theta_0\rightarrow 0}T\sqrt{\frac{g}{l}} = f_2(0) = 2\pi
+\]
+
+Agora temos uma solução aproximada que vale num limite de um dos adimensionais. Esta solução aproximada poder ser usada como referência:
+
+\[
+T = 2\pi\left(\sqrt{\frac{l}{g}}\right) \phi(\theta_0)
+\]
+onde $\phi(0) = 1$.
+
+\subsubsection{E se existir amortecimento?}
+
+Precisamos de um modelo para o amortecimento. Poderíamos seguir o que fizemos para a queda de uma bola de boliche mas agora estamos mais preocupados com baixas velocidades. Assim, a força de amortecimento pode ser proporcional à velocidade:
+
+\[
+F_a(t) = -c |U|
+\]
+
+Agora temos o novo parâmetro $c$ que deve ser considerado. A dimensão de $c$ é
+\[
+[c] = \frac{M}{T}
+\]
+
+Então, 
+\[
+\theta = \theta(t, \theta_0, l, g, m, c) \qquad N = N(t, \theta_0, l, g, m, c)
+\]
+Agora temos 6 parâmetros e 3 parâmetros com dimensões independentes:
+\[
+\begin{aligned}
+  \Pi_1 &= t\sqrt{\frac{g}{l}} \\
+  \Pi_2 &= \theta_0 \\
+  \Pi_3 &= \frac{c}{m}\sqrt{\frac{l}{g}} \\
+\end{aligned}
+\]
+
+Chamando $\omega_N = \sqrt{g/l}$, a frequência natural, e lembrando da equação do oscilador (massa mola amortecedor),
+
+\[
+\Pi_3 = 2\zeta
+\]
+onde $\zeta$ é a razão de amortecimento. O interessante é que no momento onde introduzimos um amortecimento, a massa volta a ser parte do problema.
+
+
+
+

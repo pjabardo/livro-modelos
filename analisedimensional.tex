@@ -1,7 +1,7 @@
 \section{Análise dimensional}
 \label{sec:adim}
 
-Finalmente, a Análise Dimensional tradicional será abordada. A abordagem aqui foi retirada de \citeonline{Barenblatt96} e \citeonline{Barenblatt03}. Começaremos com  uma visão global para depois entrar nos detalhes sobre unidades, sistemas de unidades, o teorema de Buckingham.
+Finalmente, a Análise Dimensional tradicional será abordada. A abordagem aqui foi retirada de \citeonline{Barenblatt96} e \citeonline{Barenblatt03}. Começaremos com  uma visão global para depois entrar nos detalhes sobre unidades, sistemas de unidades, o teorema dos $\Pi$s de Buckingham.
 
 \subsection{Escoamento viscoso ao redor de uma esfera}
 
@@ -32,19 +32,19 @@ Podemos mudar as unidades utilizadas. Assim, se mudarmos a unidade de compriment
 \item $F \lra L \cdot F$
 \end{itemize}
 
-onde $L = 1000$ é o fator de conversão de $m$ para $mm$. De outra maneira de se enxergar isso é considerar $L$ como o fator pelo qual se deve reduzir um comprimento de $1\:m$ para se obter $1\:mm$.
+onde $L = 1000$ é o fator de conversão de $m$ para $mm$. Outra maneira de se enxergar isso é considerar $L$ como o fator pelo qual se deve reduzir o comprimento de $1\:m$ para se obter $1\:mm$.
 
-O mesmo processo pode ser feito com os outros parâmetros mas com uma complicação: os outros parâmetros possuem unidades compostas. A unidade de velocidade $U$ em SI é $m/s$, depende da unidade de comprimento e da unidade de tempo. A densidade depende da unidade de massa e da unidade de comprimento. Da mesma maneira, a unidade de força, assim como a unidade de viscosidade,  depende da unidade de massa, comprimento e tempo. Cada uma destas unidades básicas (comprimento, massa e tempo) podem ser variadas de maneira independente. Assim, se a unidade de comprimento for reduzida por um multiplicador $L$, a de massa por um multiplicador $M$ e o tempo por um multiplicador $T$, os valores numéricos dos parâmetros $U$, $D$, $\rho$, $\mu$ e $F$ variam da seguinte maneira:
+O mesmo processo pode ser feito com os outros parâmetros mas com uma complicação: os outros parâmetros possuem unidades derivadas. A unidade de velocidade $U$ em SI é $m/s$, depende da unidade de comprimento e da unidade de tempo. A densidade depende da unidade de massa e da unidade de comprimento. Da mesma maneira, a unidade de força, assim como a unidade de viscosidade,  dependem da unidade de massa, comprimento e tempo. Cada uma destas unidades básicas (comprimento, massa e tempo) podem ser variadas de maneira independente. Assim, se a unidade de comprimento for reduzida por um multiplicador $L$, a de massa por um multiplicador $M$ e o tempo por um multiplicador $T$, os valores numéricos dos parâmetros $U$, $D$, $\rho$, $\mu$ e $F$ variam da seguinte maneira:
 
 \begin{itemize}
-\item $D \lra (L) \cdot D$
-\item $U \lra (L/T) \cdot U$
-\item $\rho \lra  (M/L^3) \cdot\rho$
-\item $\mu \lra \{M/(L\cdot T)\}\cdot\mu$
-\item $F \lra (M \cdot L / T^2) \cdot F$
+\item $D' \lra (L) \cdot D$
+\item $U' \lra (L/T) \cdot U$
+\item $\rho' \lra  (M/L^3) \cdot\rho$
+\item $\mu' \lra \{M/(L\cdot T)\}\cdot\mu$
+\item $F' \lra (M \cdot L / T^2) \cdot F$
 \end{itemize}
 
-Os números entre parênteses ($L$ e $L/T$ por exemplo) é conhecido na literatura de dimensão de uma grandeza. O que vamos fazer agora, é escolher um sistema de unidades específico e conveniente para nosso problema. Este sistema de unidades específico será construído de modo que neste novo sistema, \emph{numericamente}, $D = U = \rho = 1$.
+Os números entre parênteses ($L$ e $L/T$ por exemplo) é conhecido na literatura de dimensão de uma grandeza. O que vamos fazer agora, é escolher um sistema de unidades específico e conveniente para nosso problema. Este sistema de unidades específico será construído de modo que neste novo sistema, \emph{numericamente}, $D' = U' = \rho' = 1$.
 
 Para o comprimento,
 \[
@@ -68,13 +68,23 @@ e
 \[
 \frac{M\cdot L}{T^2} \cdot F = \frac{F}{\rho D^2 U^2} = C_D
 \]
-Observe que estas grandezas $1/Re$ ou $C_D$ são, respectivamente o valor da viscosidade e o valor da força no sistema de unidades onde, \emph{numericamente},  $D = U = \rho$.
+Observe que estas grandezas $1/Re$ ou $C_D$ são, respectivamente o valor da viscosidade e o valor da força no sistema de unidades onde, \emph{numericamente},  $D = U = \rho$. Mas mais interessante é o fato de que estas grandezas ($Re$ e $C_D$)  não mudam com o sistema de unidades:
+
+\[
+\begin{aligned}
+Re' &=& \frac{\rho' U' D'}{\mu'} &=& \frac{\rho (M/L^3) \cdot U (L/T) \cdot D (L) }{\mu M/(L\cdot T)} &=& \frac{\rho U D}{\mu} &=& Re \\
+C_D' &=& \frac{F'}{\rho' D'^2 U'^2} &=& \frac{F (M\cdot L/T^2)}{\rho (M/L^3) \cdot D^2 (L^2) \cdot U^2 (L^2/T^2)} &=& \frac{F}{\rho D^2 U^2} &=& C_D  \\
+\end{aligned}
+\]
+
+Estas grandezas são conhecidas como grandezas adimensionais.
 
 Neste novo sistema de unidades, a relação original proposta para a força de arrasto, apresenta os seguintes valores numéricos:
 
 \[
 \frac{F}{\rho D^2 U^2} = F\left(1,1,1, \frac{1}{Re} \right)
 \]
+
 Observe que este novo sistema de unidades, \emph{ muda com o valor de cada parâmetro}, temos uma relação mais simples:
 \[
 C_D = C_D(Re)

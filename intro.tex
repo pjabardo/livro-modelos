@@ -1,4 +1,4 @@
-\section{Um problema simples mas nem tanto}
+\chapter{Um problema simples mas nem tanto}
 \label{sec:intro}
 
 Vamos começar com um problema simples: o que cai mais rápido, uma bola de boliche ou uma pena?
@@ -21,7 +21,7 @@ Tentar analisar a trajetória exata da pena é provavelmente impossível: o prob
 
 Agora é possível entender a genialidade de Galileu. Atacar o problema diretamente mexe com todas as suas nuances  é um problema quase impossível mesmo nos dias de hoje onde todos (ou quase) os fenômenos envolvidos são conhecidos. O problema da queda da pena envolve tudo o que há de mais difícil  em dinâmica, mecânica dos fluidos, elasticidade, biologoia, etc. Este problema ``simples'', é muito mais complexo do que parece. Se para Galileu e Newton (e mais tarde Einstein, Heisenberg, Schrödinguer, etc) o problema era determinar os fundamentos da física, hoje em dia, mesmo conhecendo detalhadamente todos (será?) os fenômenos que ocorrem na queda da pena ainda estamos longe de prever de maneira precisa a sua trajetória. As coisas podem ser difíceis por motivos diferentes. Para Galileu, Newton, Einstein, etc a dificuldade era a física ainda não conhecida. Para nós é a enorme complexidade e a grande quantidade de detalhes presentes em qualquer problema real.
 
-\subsection{Modelos}
+\section{Modelos}
 
 Mas nem tudo está perdido. A queda da bola de boliche no ar sugere que podemos simplificar um pouco o problema e aplicar a segunda lei de Newton:
 \[
@@ -47,7 +47,7 @@ m \frac{d^2 z}{dt^2} = -mg - C_D A \frac{1}{2} \rho |U|\cdot U + g m_f
 \]
 onde $z$ é a altura da esfera, e $m_f$ é a massa de fluido se a esfera fosse feita do mesmo fluido que o meio e pode ser escrita como $\rho\cdot g \cdot V$ onde $V$ é o volume ocupado pelo corpo. Agora temos um modelo que funciona, mais ou menos bem. Leva em consideração a força de arrasto, a flutuação e o campo gravitacional. Existe uma caixa preta que é o coeficiente de arrasto $C_D$. Todas as limitações discutidas acima permanecem mas este modelo pode fornecer várias informações interessantes. Para se resolver esta equação diferencial, precisamos das condições iniciais: No instante, $t=0$, $U=U_0$ (no nosso exemplo $U_0 = 0$) e $z=0$.
 
-\subsection{Escalas}
+\section{Escalas}
 
 
 Fazem parte deste modelo diferentes parâmetros, $m$, $g$, $C_D$, $A$, $\rho$ e  $V$. Estes parâmetro não são independentes. Dado um corpo rígido, existe uma relação entre volume e área. A razão entre os dois é um comprimento que no caso de uma esfera, vale
@@ -77,18 +77,18 @@ onde $k$ é uma constante que depende da geometria e incorpora não apenas a raz
 \item $k$ - um coeficiente que depende da geometria e aerodinâmica
 \end{itemize}
 
-\subsection{Parâmetros adimensionais}
+\section{Parâmetros adimensionais}
 Nesta última equação, os termos $\frac{m}{\rho L^3}$, $k$ e $\frac{U^2}{L g}$ não possuem unidades, ou seja, mudando o sistema de unidades o valor destas grandezas fica constante. Estas são grandezas adimensionais. Repare que neste modelo, estes parâmetros adimensionais são resultado da razão de forças - dividimos a equação original pela força de flutuação.
 
-\subsection{Semelhança}
+\section{Semelhança}
 Estes parâmetros adimensionais, produto de manipulação simples do modelo original, tem consequências interessantes. Neste modelo, fixado os parâmetros adimensionais $\frac{m}{\rho L^3}$ e $k$, o outro parâmetro adimensional $\frac{U^2}{Lg}$ é conhecido. Podemos mudar a massa, densidade do fluido, aceleração da gravidade e dimensões do corpo mas enquanto estes parâmetros forem os mesmos, teremos um mesmo valor de $\frac{U^2}{Lg}$. Este é o resultado mais conhecido da Análise Dimensional e é essencial na condução de experimentos em escala reduzida.
 
-\subsection{Um modelo é uma idealização do problema}
+\section{Um modelo é uma idealização do problema}
 Chegamos a um modelo para a velocidade  problema da queda de um corpo. Para se chegar a este modelo utilizamos uma relação básica da dinâmica, a segunda lei de Newton e um modelo empírico para a força de arrasto de um corpo. A maneira como empregamos a segunda lei de Newton já pressupõe várias simplificações no problema como o fato da força de arrasto estar alinhado com a vertical o que sabemos não ser verdade para a queda de uma pena. Escondemos todas as dificuldades no coeficiente semi-empírico $C_D$. Sabemos que a realidade é muito mais complicada. Mas este modelo pode fornecer informações importantes. Mesmo no caso da queda de uma pena, um coeficiente de arrasto médio pode fornecer informações importantes.
 
 Na pior das hipóteses, um modelo simples permite compreender melhor o problema real e estimar as grandezas importantes do problema, facilitando o projeto de experimentos mais sofisticados.
 
-\subsection{Estrutura deste artigo}
+\section{Estrutura deste artigo}
 
 Com o exemplo do corpo caindo em um meio fluido em um campo gravitacional constante, introduzimos vários conceitos como modelos, parâmetros adimensionais e semelhança. Vamos, agora, entrar mais a fundo em cada questão. Geometria simples será usada para entender melhor os parâmetros adimensionais e semelhança. Em seguida usaremos estes conceitos em alguns problemas simples com equações diferenciais conhecidas, em particular a aerodinâmica de uma esfera. Finalmente apresentaremos a análise dimensional e o teorema dos $\Pi$s de Buckingham.
 

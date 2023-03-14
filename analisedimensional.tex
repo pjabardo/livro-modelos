@@ -1,9 +1,9 @@
-\section{Análise dimensional}
+\chapter{Análise dimensional}
 \label{sec:adim}
 
 Finalmente, a Análise Dimensional tradicional será abordada. A abordagem aqui foi retirada de \citeonline{Barenblatt96} e \citeonline{Barenblatt03}. Começaremos com  uma visão global para depois entrar nos detalhes sobre unidades, sistemas de unidades, o teorema dos $\Pi$s de Buckingham.
 
-\subsection{Escoamento viscoso ao redor de uma esfera}
+\section{Escoamento viscoso ao redor de uma esfera}
 
 A gênesis da análise dimensional e o teorema dos $\Pi$s de Buckingham é o fato de que as leis físicas não deveriam depender do sistema de unidades. Falaremos em maiores detalhes sobre unidades e sistemas de unidades mas para começar utilizaremos as idéias que qualquer um lendo este texto até aqui tem (ou deveria ter...).
 
@@ -117,7 +117,7 @@ Assim, o que fizemos aqui foi empregar os princípios usados para se obter as eq
 
 O famoso teorema dos $\Pi$s de Buckingham não é nada além de uma aplicação sistemática do que fizemos acima. Para se chegar a este resultado, iremos explorar mais o que é unidade, sistema de unidades e classe de unidades.
 
-\subsection{Formulação do proplema: constantes, variáveis e parâmetros}
+\section{Formulação do proplema: constantes, variáveis e parâmetros}
 
 Qualquer fenômeno físico, em geral,  pode ser formulado da seguinte maneira:
 
@@ -145,7 +145,7 @@ Nesta formulação, $x_1$, \ldots, $x_N$ são constantes, parâmetros e variáve
 
 
 
-\subsection{Dimensões e Unidades e Grandezas Adimensionais}
+\section{Dimensões e Unidades e Grandezas Adimensionais}
 
 Quando se fala que uma pessoa tem 1,82 m de altura, o que se quer dizer é que a altura desta pessoa é 1,82 vezes a altura de uma barra padrão armazenada no BIPM (Bureau International des Poids e Mesures) que se convencionou chamar de 1 m. Analogamente se esta mesma pessoa tem 90 kg de massa, isto quer dizer que a massa desta pessoa é 90 vezes a massa de um corpo armazenado no BIPM (hoje isso é mais curiosidade histórica como veremos). Estas são \emph{unidades fundamentais}. 
 
@@ -184,7 +184,7 @@ O jeito usual de se representar uma unidade de uma grandeza está diretamente re
 \]
     
   
-\subsection{Classes e Sistemas de Unidades}
+\section{Classes e Sistemas de Unidades}
 
 As unidades utilizadas para se representar uma grandeza podem ser fundamentais ou derivadas. As unidades derivadas são obtidas a partir de princípios físicos bem estabelecidos como a unidade de força Newton que é definida a partir da segunda lei de Newton e está relacionada com a massa e aceleração:
 
@@ -230,7 +230,7 @@ onde fica clara conversão de unidades. O que foi mostrado acima pode ficar clar
 
 Mas agora temos dois princípios físicos para se definir força. No sistema SI, a unidade de força é definida a partir da segunda lei de Newton e aparece a constante universal da gravidade. Como já escolhemos as unidades de comprimento e tempo como unidades básicas, a unidade de massa seria uma unidade derivada e \emph{seríam necessárias duas unidades básicas independentes} para representar problemas de mecânica. Aplicando outros princípios físicos isso poderia ser reduzido ainda mais. Poderíamos até chegar numa situação onde não existem unidades básicas fundamentais. Porque motivo isto não é feito? Conveniência, muitas medidas usuais seriam representadas por números muito pequenos ou grandes. Mas além disso, o que ganharíamos com isso se o nosso problema não envolve a gravitação universal. Para a maior parte dos problemas do dia a dia, a gravidade pode ser representada por uma única constante, a aceleração da gravidade. A gravitação universal só aparece indiretamente. O importante a ser lembrado é que ainda teremos uma unidade de massa, comprimento e tempo. 
 
-\subsubsection{Classes de sistemas de unidades e o sistema SI}
+\subsection{Classes de sistemas de unidades e o sistema SI}
 
 Mas na realidade, a maneira como o sistema internacional de unidades é hoje definido não existem objetos físicos que definem qualquer unidade básica. O SI é construído a partir de princípios físicos universais e bem conhecidos. Para que as medidas do dia a dia sejam convenientes, fatores multiplicativos são usados. Exemplo. O segundo é definido como $9 192 631 770$ vezes o tempo de transição do Césio 133. Este número enorme poderia ser igual a 1. Por outro lado, o metro é definido como a distância que a velocidade da luz no vácuo, que é uma constante pré-definida, durante 1 s. A unidade de comprimento poderia ser definida como a distância que a luz percorre no vácuo durante 1 transição do Césio 133 onde a velocidade da luz é definida numericamente como 1. As outras unidades básicas são definidas a partir de outras leis físicas mas os valores numéricos são fixados por conveniência, da mesma maneira que usamos graus no lugar de radianos em várias aplicações.
 
@@ -241,7 +241,7 @@ A pergunta que surge agora é qual o papel da classe do sistema de unidades? O S
 
 
 
-\subsection{A dimensão de uma grandeza é sempre um monômio}
+\section{A dimensão de uma grandeza é sempre um monômio}
 
 Aceitamos desde cedo que não se pode somar metros com segundos. Será que isso é sempre verdade. O que queremos dizer na verdade é as dimensões de uma grandeza são sempre monômios como no caso de uma força:
 
@@ -344,7 +344,7 @@ Como $\phi(1,1,1,\ldots) = 1$, então $C_N = 1$ demonstrando que as funções di
 
 
 
-\subsection{Grandezas independentes a dependentes}
+\section{Grandezas independentes a dependentes}
 
 Escolhida a classe de sistemas de unidades, queremos escrever as as dimensões dos parâmetros relevantes para o nosso problema nesta classe. Assim, no problema do escoamento ao redor da esfera, estamos escolhendo a class $LMT$. Os parâmetros deste problema são $U$, $D$, $\rho$ e $\mu$ e $F$  (estamos tratando a força como mais um parâmetro).
 
@@ -397,7 +397,7 @@ Dados um problema caracterizado por $N$ parâmetros, o número de parâmetros in
 
   
   
-\subsection{O teormea dos $\Pi$s de Buckinham}
+\section{O teormea dos $\Pi$s de Buckinham}
 
 Finalmente chegamos ao resultado esperado: o teorema dos $\Pi$s de Buckingham.
 %%% Um pouco de história

@@ -1,9 +1,9 @@
-\section{Equações diferenciais}
+\chapter{Equações diferenciais}
 Boa parte do que se faz em ciência e tecnologia envolve fenômenos cujas equações básicas são conhecidas mesmo que se saiba pouco sobre o fenômeno em si. Tomemos como exemplo o escoamento de um fluido Newtoniano incompressível ao redor de um cilindro de grande comprimento. As equações básicas, equações de Navier-Stokes são conhecidas a quase 2 séculos mas este continua sendo um problema onde ocorre muita pesquisa, com muitos artigos em revistas científicas e pesquisadores ao redor do mundo empenhando grandes esforços neste problema aparentemente simples. Esta é uma situação comum em ciência. 
 
 O fato de se conhecer os princípios básicos e as respectivas equações não quer dizer que o problema está resolvido. Mas é importante lembrar que estas equações continuam válidas mesmo que alguns detalhes do problema sejam nebulosos. Nesta seção, alguns problemas (modelos) serão analisados a partir de suas equações básicas.
 
-\subsection{Pêndulo simples}
+\section{Pêndulo simples}
 
 \begin{figure}
 \centering
@@ -15,7 +15,7 @@ O fato de se conhecer os princípios básicos e as respectivas equações não q
 
 O pêndulo simples é um dos problemas mais conhecidos na física básica. A figura \ref{fig:pendulo} mostra um diagrama esquemático do pêndulo simples. A palavra ``simples'' deve ser enfatizada. Este problema introdutório em cursos de físicas é uma idealização do problema real. Nesta idealização, os únicos parâmetros importantes são a massa do pêndulo, que neste modelo idealizado some, a aceleração da gravidade, que é constante, o comprimento do pêndulo e o ângulo inicial em que se solta o pêndulo. Nesta idealização, a dimensão da massa é desprezada e a única caractérística do fio é o seu comprimento que é constante. Efeitos como resitência do ar, elasticidade do fio, rotação da terra são desprezados. Se levados em conta, o problema é consideravelmente mais complexo. 
 
-\subsubsection{O que se pode desprezar}
+\subsection{O que se pode desprezar}
 Mas não é tudo, outros fatores influenciam este problema como, por exemplo, a variação de $\textbf{g}$ com a posição. No limite, até a dinâmica dos átomos do ar e a radiação solar incidente interferem. Levando em conta tudo este problema não seria resolvido. Neste sentido, o mais importante é saber o que ignorar. Apenas os efeitos com as escalas corretas. Imaginemos que este pêndulo é uma esfera de aço com 1 cm de diâmetro. Se esta esfera refletir toda a luz incidente, a razão entre a força gerada pela pressão da luz do sol na terra e a força da gravidade vale (ordem de grandeza):
 \[
 \frac{F_{sol}}{F_{grav}} \approx \frac{W''}{\rho D g c} \approx 5\times 10^{-9}
@@ -29,7 +29,7 @@ Por outro lado, se o pêndulo tiver velocidade típica da esfera for de 1 m/s e 
 
 Este valor de 0,02\% é pequeno mas seu efeito acumulado pode ser considerável (pêndulos param) e dependendo do que se deseja, deve ser incluido. No entanto, é importante observar que, por este valor ser pequeno, um modelo simples com incerteza alta para a força de arrasto geralmente é suficiente para a maioria dos problemas. Caso contrário teria que se resolver o problema do escoamento ao redor da esfera, o que, como será visto adiante, não é um problema simples.
 
-\subsubsection{Modelo matemático simples}
+\subsection{Modelo matemático simples}
 Com todas as simplificações anteriores, chega-se à equação do pêndulo simples:
 
 \[
@@ -66,8 +66,8 @@ o que se observa neste problema simples é que a formulação do problema simpli
 
 Uma outra maneira se enxergar este processo (análise dimensional) é considerar que pode-se escolher um outro sistema de unidades onde os coeficientes (neste caso $\sqrt{L/g}$) valem 1.
 
-\subsection{Difusão de calor}
-\subsubsection{Problema 3D}
+\section{Difusão de calor}
+\subsection{Problema 3D}
 Neste caso, o problema é modelado por uma equação diferencial parcial. Vale ressaltar que para se chegar a esta equação diferencial, o problema já foi simplificado. O problema da difusão de calor linear é modelado pela seguinte equação diferencial:
 \[
 \frac{\partial u}{\partial t} = \alpha\nabla^2 u
@@ -96,7 +96,7 @@ u = u_0 \cdot \varphi(t_*, x_*, y_*, z_*) = u_0\cdot\varphi\left(\frac{t\alpha}{
 \]
 O problema original tinha 7 parâmetros e foi reduzido para 4, o que é um ganho substancial. Novamente, para este tipo de geometria e este tipo de condição de contorno, a solução deste problema adimensional vale para quaisquer valores de $L$, $\alpha$ e $u_0$. Outro aspecto interessante é que no domínio/tempo de interesse, todos os parâmetros são da ordem um, $\mathcal{O}(1)$.
 
-\subsubsection{Uma barra fina e comprida}
+\subsection{Uma barra fina e comprida}
 
 Modificando o problema de modo que o domínio é um paralelepípedo com lados $L_x=L$, $L_y$ e $L_z$, onde $L \gg L_x$ e $L \gg L_y$, as variações da temperatura nas direções $y$ e $z$ para $x$ constante são desprezíveis e portanto a equação diferencial pode ser simplificada de modo que 
 \[
@@ -117,7 +117,7 @@ u(x,\infty) \lra \frac{x}{L}\cdot u_0
 \]
 Mas nos outros instantes de tempo é necessário resolver a equação acima. Outras simplificações são possíveis quando $L$ é muito grande ou quando $t$ é muito pequeno.
 
-\subsubsection{Auto-semelhança: barra infinita}
+\subsection{Auto-semelhança: barra infinita}
 O que acontece se a barra for muito comprida (ou o logo no começo)? Neste caso, não existe uma escala de comprimento pré-definida. Assim esta escala deve sair do próprio problema. Ou seja, se $L\lra\infty$, para que o tempo adimensional seja constante:
 \[
 \frac{t\alpha}{L^2} = cte \qrq L = \sqrt{t\alpha} \qrq \eta = \frac{x}{L} = \frac{x}{\sqrt{\alpha t}} \qrq \frac{u}{u_0} = f(\eta)
@@ -187,7 +187,7 @@ Se antes, além do tempo e coordenadas,  eram  necessários resolver o problema 
 
 Este resultado ó obtido na análise dimensional tradicional. No entanto é interessante lembrar que nesta formulação, cada termo $u_*$ tem ordem de grandeza 1 por construção e aparecem dentro de derivadas. Dependendo das circunstâncias, estimativas relativas de cada termo desta equação podem ser feitas de modo a desprezar alguns termos e simplificar o problema.
 
-\subsection{Equações de Euler - $Re\lra\infty$}
+\section{Equações de Euler - $Re\lra\infty$}
 
 Uma aproximação de \ref{eq:ans} que salta à vista é o limite 
 \[
@@ -206,7 +206,7 @@ P_0 = \rho U_0^2
 
 A equação de Euler ainda possue o termo convectivo não linear mas já não é uma equação de segunda ordem. Isto tem consequências, principalmente perto da parede pois nas equações de Euler, a velocidade junto a parede não é nula. Mas longe da parede as equações de Euler podem ser representativas, principalmente se não houver separação.
 
-\subsection{Equação de Stokes}
+\section{Equação de Stokes}
 Um outro limite é quando $Re\lra 0$. Neste caso não faz sentido empregar $P_0 = \rho U_0^2$ que foi obtido admitindo $Re$ grande. Novamente, considerando o escoamento em regime permanente e multiplicando ambos os lados da equação por $Re$, 
 \[
 Re\left(\p{u}_*\cdot\nabla_*\p{u_*}\right) = -Re\frac{P_0}{\rho U_0^2}\nabla_* p_* + \nabla_*^2\p{u}_* \qquad\qquad \nabla_*\p{u}_* = 0
@@ -242,14 +242,14 @@ F_D = 6\pi\mu U_0 D
 
 É interessante observar que a equação de stokes tem dois termos, um contendo a pressão o outro a velocidade de modo que existe um equilíbrio entre estes dois termos. Se um sobe localmente, o outro terá que subir imediatamente para manter o equilíbrio. Neste sentido o fato de que as estimativas $F_P$ e $F_V$ têm a mesma forma é esperado.
 
-\subsection{E Stokes para um cilindro infinito?}
+\section{E Stokes para um cilindro infinito?}
 A princípio, a análise que foi feita para se obter a equação de Stokes para uma esfera poderia ser repetida para qualquer corpo. Não foi feita nenhuma hipótese quanto a geometria do corpo além de se impor uma escala dimensional. Entretanto quando tenta fazer a mesma análise para um cilindro muito longo, a equação de Stokes não tem solução. Este fato é conhecido como o \emph{Paradoxo de Stokes} \cite{Birkhoff60}. O melhor que se pode fazer é linearizar o termo convectivo, obtendo-se a seguinte equação:
 
 \[
 Re\:\hat{\p{i}}\cdot\nabla_*\p{u_*} = -\nabla_* p_* + \nabla_*^2\p{u}_*
 \]
 
-\subsection{Velocidade variando ciclicamente}
+\section{Velocidade variando ciclicamente}
 Até este ponto, admitiu-se que o escoamento estava em regime permanente. Assim, a escala de tempo é produto do próprio escoamento e suas escalas de velocidade ($U_0$) e dimensão ($D$) com $t_0 = D/U_0$. No entanto, uma escala externa de tempo externa pode ser imposta se a velocidade ao longe valer
 \[
 U_\infty = U_0\cdot\left(1 + \epsilon_0\cdot\cos \omega_0 t\right)
@@ -274,7 +274,7 @@ novas escalas de tempo são introduzidas: $1/\omega_1, 1/\omega_2, \ldots, 1/\om
 
 É interessante observar que se por um lado, um campo de velocidades variando ciclicamente com várias frequências parece algo exotérico, é isto o que acontece em um escoamento turbulento que tem um espectro contínuo que deve ser modelado. Além disso todas as três componentes de velocidade variam e estão correlacionadas entre si. Isto parece ser muito mais difícil de se simular experimentalmente (ou mesmo numericamente) mas na prática, se $Re$ for alto o suficiente, basta gerar um escoamento com escala integral correta que um espectro padrão (Von Karman por exemplo) surge.
 
-\subsection{Esfera em uma base elástica}
+\section{Esfera em uma base elástica}
 Esta é uma situação comum onde a esfera (ou outro corpo) não está fixo mas pode se mover em torno de um ponto. Este caso introduz uma nova equação. Além da dinâmica do fluido externo ao corpo, é necessário modelar a dinâmica do próprio corpo. O modelo mais simples consiste em um sistema massa-mola-amortecedor de 1 graus de liberdade. Se o corpo tem uma massa $m$ e a base tem rigidez $k$, a frequência natural introduz uma outra escala de tempo:
 \[
 \frac{1}{t_2}  = \omega_N = \sqrt{\frac{k}{m}} \qqrq t_* = \frac{t}{t_0} = t\cdot \frac{U_0}{D}
@@ -313,11 +313,11 @@ A equação do oscilador toma a seguinte forma:
 \]
 Como era de se esperar os mesmos parâmetros adimensionais $V_R$, $\rho D^3/m$ e $Re$ aparecem.
 
-\subsection{Camada Limite quando $Re\lra\infty$ e solução de Blasius para a placa plana}
+\section{Camada Limite quando $Re\lra\infty$ e solução de Blasius para a placa plana}
 
 As equações de Euler foram obtidas desprezando o termo difusivo (viscoso) quando $Re\lra\infty$. Como já foi visto,  sabe-se que isso introduz uma dificuldade, conhecida como o paradoxo D'Alembert \cite{Birkhoff60}. Este paradoxo só foi resolvido em 1904 quando L. Prantl introduziu  o conceito de camada limite \cite{Birkhoff60}. O problema é que utilizar a escala de comprimento $D$ para se estimar o termo difusivo é inconsistente com a realidade: a mudança da velocidade de zero (na parede) até um valor alto da ordem de $U_0$ ocorre em uma região muito pequena próxima à parede com dimensões características $\delta$, onde $\delta \ll D$, e portanto o  gradiente de velocidade é elevado e o termo difusivo não pode ser simplesmente desprezado (nesta região próxima à parede). A espessura da camada limite $\delta$ é uma outra escala do problema. Esta nova escala de comprimento é de natureza distinta da escala original $D$ pois não é algo se enxerga imediatamente mas sim produto do próprio escoamento. Neste contexto,  não é coincidência, então, que levou tanto tempo para alguém propor a teoria da camada limite. Muito do que se discutiu até este momento pode ser aplicado como um algorítmo mas introduzindo um pouco de física pode-se ir muito além.
 
-\subsubsection{Estimativa da espessura da camada limite}
+\subsection{Estimativa da espessura da camada limite}
 As equações diferenciais já analisadas tinham variáveis dependentes (como velocidade, temperatura, etc) e variáveis independentes (coordenadas no espaço e tempo) e parâmetros (viscosidade, etc). Assim, o procedimento adotado foi escolher escalas adequadas de modo a construir parâmetros adimensionais (variáveis com subíndice ``$*$'') que tivessem ordem de grandeza 1 na região de interesse. Um outro jeito de enxergar isso, é mudar o sistema de unidades de modo que as grandezas, neste novo sistema tenham valores própximos de 1. No caso do escoamento ao redor da esfera, isto consiste em utilzar um sistema de unidades onde o diâmetro da esfera tem valor numérico igual a 1 assim como a velocidade ao longe. Isto é o que se chama, tradicionalmente, de análise dimensional e será discutido mais adiante. 
 
 A vantagem de se adotar estas escalas como referência (ou mudar o sistema de unidades) é que fica fácil comparar diretamente as ordens de grandeza de cada termo da equação que modela o fenômeno e desprezar  os termos pequenos. Isto pode ser sedutor mas sem cuidado (outro jeito de dizer ``sem conhecer os fenômenos físicos relevantes''), pode-se chegar a problemas como o paradoxo de Stokes ou o paradoxo D'Alembert. 
@@ -352,7 +352,7 @@ Esta expressão é consistente com a solução de Blasius para a camada limite l
 
 
 
-\subsubsection{A camada limite na placa plana}
+\subsection{A camada limite na placa plana}
 
 \begin{figure}
 \centering
@@ -403,7 +403,7 @@ p_* = p_*(x)
 \]
 Esta equação será resolvida para o caso mais simples, quando não há gradiante de pressão.
 
-\subsubsection{A solução de Blasius}
+\subsection{A solução de Blasius}
 
 Existe um sutileza na análise da camada limite apresentada até agora. Será que a escala $\delta$ é realmente apropriada? Ao final do comprimento $L$, esta análise é consistente. Mas e para $x < L$? Se o escoamento tem algo a ver com o que se vê na figura \ref{fig:blayer} claramente $\delta = \delta(x)$, ou seja, $\delta$ é uma escala local que varia ao longo do escoamento. É aí que o fato da equação diferencial ser parabólica se torna importante. A escoamento só depende do que veio antes, sua história. 
 
@@ -458,14 +458,14 @@ onde ao invés de $Re$ (definido com a escala de comprimento $L$) temos $Re_x$ (
 
 
 
-\subsection{Será que o problema da esfera já está resolvido?}
+\section{Será que o problema da esfera já está resolvido?}
 
 Diferentes aspectos do escoamento ao redor de uma esfera foram considerados mas a lista considerável de outros fatores podem influenciar no fenômeno que podem, eventualmente, ser importantes. Também não se pode esquecer que mesmo um fenômeno complexo como o escoamento ao redor de uma esfera já é um simplificação considerável. 
 
 Nenhuma esfera é uma esfera de verdade. Como entra a rugosidade? A crise do arrasto mostra que um parâmetro pequeno (rugosidade) pode ter um efeito drástico no escoamento em algumas circunstâncias. Nenhuma esfera está isolada: sempre existem paredes que podem influenciar mais ou menos o escoamento. Mesmo quando o modelo simplificado inicial não é o suficiente, pode servir como uma referência. Além disso sempre existe alguma compressibilidade que à medida que a velocidade aumenta vai ter uma importância maior. Não estamos nem falando de outros fenômenos como transferência de calor ou efeitos moleculares.
 
 
-\subsection{Semelhança}
+\section{Semelhança}
 
 Uma situação comum é realizar testes com modelos em escala reduzida. Mas, agora, qual a relação entre as grandezas no modelo em escala com o protótipo? Na metodologia apresentada até este ponto isto é simples: enquanto as escalas forem definidas de maneira consistente, as equações adimensionais (variáveis e operadores com sub-índice ``$*$'') são invariantes enquanto os parâmetros adimensionais forem os mesmos. No caso do escoamento ao redor de uma esfera, é necessário que a seguinte igualdade seja satisfeita:
 \[

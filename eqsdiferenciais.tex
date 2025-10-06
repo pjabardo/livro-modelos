@@ -1,7 +1,7 @@
 \chapter{Equações diferenciais}
 Boa parte do que se faz em ciência e tecnologia envolve fenômenos cujas equações básicas são conhecidas mesmo que se saiba pouco sobre o fenômeno em si. Tomemos como exemplo o escoamento de um fluido Newtoniano incompressível ao redor de um cilindro de grande comprimento. As equações básicas, equações de Navier-Stokes são conhecidas a quase 2 séculos mas este continua sendo um problema onde ocorre muita pesquisa, com muitos artigos em revistas científicas e pesquisadores ao redor do mundo empenhando grandes esforços neste problema aparentemente simples. Esta é uma situação comum em ciência. 
 
-O fato de se conhecer os princípios básicos e as respectivas equações não quer dizer que o problema está resolvido. Mas é importante lembrar que estas equações continuam válidas mesmo que alguns detalhes do problema sejam nebulosos. Nesta seção, alguns problemas (modelos) serão analisados a partir de suas equações básicas.
+O fato de se conhecer os princípios básicos e as respectivas equações não quer dizer que o problema está resolvido. Mas é importante lembrar que estas equações continuam válidas mesmo que alguns detalhes do problema sejam nebulosos. Neste capítulo, alguns problemas (modelos) serão analisados a partir de suas equações básicas.
 
 \section{Pêndulo simples}
 
@@ -13,10 +13,13 @@ O fato de se conhecer os princípios básicos e as respectivas equações não q
 \label{fig:pendulo}
 \end{figure}
 
-O pêndulo simples é um dos problemas mais conhecidos na física básica. A figura \ref{fig:pendulo} mostra um diagrama esquemático do pêndulo simples. A palavra ``simples'' deve ser enfatizada. Este problema introdutório em cursos de físicas é uma idealização do problema real. Nesta idealização, os únicos parâmetros importantes são a massa do pêndulo, que neste modelo idealizado some, a aceleração da gravidade, que é constante, o comprimento do pêndulo e o ângulo inicial em que se solta o pêndulo. Nesta idealização, a dimensão da massa é desprezada e a única caractérística do fio é o seu comprimento que é constante. Efeitos como resitência do ar, elasticidade do fio, rotação da terra são desprezados. Se levados em conta, o problema é consideravelmente mais complexo. 
-
+O pêndulo simples é um dos problemas mais conhecidos na física básica. A figura \ref{fig:pendulo} mostra um diagrama esquemático do pêndulo simples. A palavra ``simples'' deve ser enfatizada. Este problema introdutório em cursos de física e mecânica é uma idealização do problema real. Nesta idealização, os únicos parâmetros importantes são a massa do pêndulo, que neste modelo idealizado some, a aceleração da gravidade, que é constante, o comprimento do pêndulo e o ângulo inicial em que se solta o pêndulo. Nesta idealização, a dimensão da massa é desprezada e a única caractérística do fio é o seu comprimento que é constante. 
 \subsection{O que se pode desprezar}
-Mas não é tudo, outros fatores influenciam este problema como, por exemplo, a variação de $\textbf{g}$ com a posição. No limite, até a dinâmica dos átomos do ar e a radiação solar incidente interferem. Levando em conta tudo este problema não seria resolvido. Neste sentido, o mais importante é saber o que ignorar. Apenas os efeitos com as escalas corretas. Imaginemos que este pêndulo é uma esfera de aço com 1 cm de diâmetro. Se esta esfera refletir toda a luz incidente, a razão entre a força gerada pela pressão da luz do sol na terra e a força da gravidade vale (ordem de grandeza):
+Mas não é tudo, outros fatores influenciam este problema como, por exemplo, resistência do ar,  geometria exata do pêndulo, elasticidade do fio, latitude, longitude a altitude do pêndulo, rotação da terra, posição do sol e outros corpos celestes, tráfego de veículos no bairro e tipo de solo onde está montado o experimento, e até mesmo variação de $\textbf{g}$  são desprezados. Se estes aspectos do problema são levados em conta, o problema é consideravelmente mais complexo. No limite, até a dinâmica dos átomos do ar e a radiação solar incidente interferem. Levando em conta tudo este problema não seria resolvido.
+
+Neste sentido, ao se encarar o problema do ``pêndulo simples'', talvez o mais importante é saber o que ignorar! Mas para sabermos o que ignorar, é preciso conhecer pelo menos a ordem de grandeza de cada efeito listado acima na dinâmica do problema. Muitas vezes a experiência do dia a dia é suficiente para se desprezar vários dos efeitos acima. Mas uma estimativa correta destes efeitos é importante e pelo menos uma escala de grandeza destes efeitos deve ser estimada.
+
+Imaginemos que este pêndulo é uma esfera de aço com 1 cm de diâmetro. Se esta esfera refletir toda a luz incidente, a razão entre a força gerada pela pressão da luz do sol na terra e a força da gravidade vale (ordem de grandeza):
 \[
 \frac{F_{sol}}{F_{grav}} \approx \frac{W''}{\rho D g c} \approx 5\times 10^{-9}
 \]
@@ -27,7 +30,7 @@ Por outro lado, se o pêndulo tiver velocidade típica da esfera for de 1 m/s e 
 \frac{F_{aero}}{F_{grav}} = \frac{3\cdot C_D \rho_a V^2}{32\cdot\rho D g} \approx 0,02\%
 \]
 
-Este valor de 0,02\% é pequeno mas seu efeito acumulado pode ser considerável (pêndulos param) e dependendo do que se deseja, deve ser incluido. No entanto, é importante observar que, por este valor ser pequeno, um modelo simples com incerteza alta para a força de arrasto geralmente é suficiente para a maioria dos problemas. Caso contrário teria que se resolver o problema do escoamento ao redor da esfera, o que, como será visto adiante, não é um problema simples.
+Este valor de 0,02\% é pequeno mas seu efeito é acumulativo e inclemente: os pêndulos param depois algum tempo! Dependendo do objetivo do estudo, este efeito deve ser incluido. Mas esta escala pode ajudar bastante. Esta força de arrasto é pequena então o modelo para a força de arrasto não precisa ser o mais sofisticado do mundo. Um coeficiente de arasto médio pode ser suficiente para a maioria das situações. Caso contrário seria necessário resolver o problema do escoamento transitório ao redor da esfera, o que, como será visto adiante, não é nada simples.
 
 \subsection{Modelo matemático simples}
 Com todas as simplificações anteriores, chega-se à equação do pêndulo simples:
@@ -39,6 +42,7 @@ com as seguintes condições de contorno:
 \[
 t = 0 \qrq \theta=\theta_0, \quad\frac{d\theta}{dt} = 0
 \]
+Aqui, vale ressaltar que as condições de contorno são integrais ao problema!
 
 Esta equação pode ser reescrita como:
 \[
@@ -52,6 +56,8 @@ chega-se à equação adimensional
 \[
 \frac{d^2\theta}{dt_*^2} + \sin\theta = 0 
 \]
+
+Os parâmetros do problema $L$ e $g$ geram uma escala de tempo $t_0$.
 
 Agora, sabendo $\theta_0$ (condição de contorno inicial) resolvendo esta equação, está se resolvendo qualquer pêndulo simples. Quando $\theta_0$ é pequeno, $\sin\theta_0\approx\theta_0$ e a equação diferencial é linearizada. Sua solução é simples e o período do pêndulo vale:
 \[
@@ -72,7 +78,7 @@ Neste caso, o problema é modelado por uma equação diferencial parcial. Vale r
 \[
 \frac{\partial u}{\partial t} = \alpha\nabla^2 u
 \]
-onde $u$ é a temperatura e $\alpha$ é o coeficiente de difusão de calor do material. Além disso, ainda faltam as condições de contorno. Quando o domínio é um cubo de lado $L$ formado pelas faces $x=0,L$m $y=0,L$ e $z=0,L$ e as condições de contorno forem $u=0$ na face $x=0$, $u=u_0$ e nas demais o fluxo de calor é nulo, ou seja, a derivada da temperatura em relação à normal da face é zero. A condição inicial é $u=0$. O objetivo deste problema é obter $u(x,y,z,t)$ para $t>0$:
+onde $u$ é a temperatura e $\alpha$ é o coeficiente de difusão de calor do material. Além disso, ainda faltam as condições de contorno. Quando o domínio é um cubo de lado $L$ formado pelas faces $x=(0,L)$, $y=(0,L)$ e $z=(0,L)$ e as condições de contorno forem $u=0$ na face $x=0$, $u=u_0$ e nas demais o fluxo de calor é nulo, ou seja, a derivada da temperatura em relação à normal da face é zero. A condição inicial é $u=0$. O objetivo deste problema é obter $u(x,y,z,t)$ para $t>0$:
 \[
 u = f(u_0, L, \alpha, x, y, z, t)
 \]
